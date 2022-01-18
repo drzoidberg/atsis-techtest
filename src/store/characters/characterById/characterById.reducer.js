@@ -1,9 +1,9 @@
 import constants from '../../constants'
 
 const { pending } = constants.status
-const { FETCH_CHARACTER_ATTRIBUTES } = constants.type.characters
+const { FETCH_CHARACTER_BY_ID } = constants.type.characters
 
-export default function characterAttributes(
+export default function characterById(
   state = {
     status: pending,
     error: '',
@@ -15,7 +15,7 @@ export default function characterAttributes(
   action,
 ) {
   switch (action.type) {
-    case FETCH_CHARACTER_ATTRIBUTES:
+    case FETCH_CHARACTER_BY_ID:
       return action.payload
     default:
       return state
