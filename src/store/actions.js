@@ -1,3 +1,15 @@
-import { fetchAllCharacters, fetchCharacterById, fetchCharactersByName, fetchCharactersByCategory } from './characters'
+import {
+  fetchAllCharacters,
+  fetchCharacterById,
+  fetchCharactersByName,
+  fetchCharactersByCategory,
+  fetchRandomCharacter,
+} from './characters'
 
-export { fetchAllCharacters, fetchCharacterById, fetchCharactersByName, fetchCharactersByCategory }
+export {
+  fetchAllCharacters,
+  fetchCharacterById,
+  fetchCharactersByName,
+  fetchCharactersByCategory,
+  fetchRandomCharacter,
+}

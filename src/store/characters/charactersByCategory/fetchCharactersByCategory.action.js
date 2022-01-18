@@ -13,6 +13,7 @@ export default function fetchCharactersByName(category) {
         payload: {
           status: fulfilled,
           data: response.data,
+          paramsPassed: { category },
         },
       })
     } catch (error) {
@@ -20,7 +21,7 @@ export default function fetchCharactersByName(category) {
         type: FETCH_CHARACTERS_BY_CATEGORY,
         payload: {
           status: rejected,
-          error: `There was an error. Please try again later (API returned: ${error.message})`,
+          error: `There was an error. Please try again later (API returned: "${error.message}")`,
         },
       })
     }

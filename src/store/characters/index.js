@@ -10,6 +10,9 @@ import fetchCharactersByName from './charactersByName/fetchCharactersByName.acti
 import charactersByCategory from './charactersByCategory/charactersByCategory.reducer'
 import fetchCharactersByCategory from './charactersByCategory/fetchCharactersByCategory.action'
 
+import randomCharacter from './randomCharacter/randomCharacter.reducer'
+import fetchRandomCharacter from './randomCharacter/fetchRandomCharacter.action'
+
 export {
   allCharactersList,
   characterById,
@@ -19,4 +22,6 @@ export {
   fetchCharactersByName,
   charactersByCategory,
   fetchCharactersByCategory,
+  randomCharacter,
+  fetchRandomCharacter,
 }
