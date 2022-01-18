@@ -4,4 +4,14 @@ import fetchAllCharacters from './allCharactersList/fetchAllCharacters.action'
 import characterById from './characterById/characterById.reducer'
 import fetchCharacterById from './characterById/fetchCharacterById.action'
 
-export { allCharactersList, characterById, fetchAllCharacters, fetchCharacterById }
+import charactersByName from './charactersByName/charactersByName.reducer'
+import fetchCharactersByName from './charactersByName/fetchCharactersByName.action'
+
+export {
+  allCharactersList,
+  characterById,
+  fetchAllCharacters,
+  fetchCharacterById,
+  charactersByName,
+  fetchCharactersByName,
+}

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchAllCharacters, fetchCharacterById } from './store/actions'
+import { fetchAllCharacters, fetchCharacterById, fetchCharactersByName } from './store/actions'
 
 function App() {
   // const allCharacterListData = useSelector(state => state.allCharactersList)
@@ -12,6 +12,7 @@ function App() {
   useEffect(() => {
     dispatch(fetchAllCharacters())
     dispatch(fetchCharacterById(1))
+    dispatch(fetchCharactersByName('Walter'))
   }, [dispatch])
   console.log(state)
 

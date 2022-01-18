@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux'
 
-import { allCharactersList, characterById } from './characters'
+import { allCharactersList, characterById, charactersByName } from './characters'
 
 export default combineReducers({
   allCharactersList,
   characterById,
+  charactersByName,
 })

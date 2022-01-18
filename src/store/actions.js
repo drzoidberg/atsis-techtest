@@ -1,3 +1,3 @@
-import { fetchAllCharacters, fetchCharacterById } from './characters'
+import { fetchAllCharacters, fetchCharacterById, fetchCharactersByName } from './characters'
 
-export { fetchAllCharacters, fetchCharacterById }
+export { fetchAllCharacters, fetchCharacterById, fetchCharactersByName }
