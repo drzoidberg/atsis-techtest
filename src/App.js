@@ -15,6 +15,7 @@ import {
   fetchQuotesBySeries,
   fetchQuotesByAuthor,
   fetchRandomQuote,
+  fetchRandomQuoteByAuthor,
 } from './store/actions'
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
     dispatch(fetchQuotesBySeries('Better Call Saul'))
     dispatch(fetchQuotesByAuthor('Jesse Pinkman'))
     dispatch(fetchRandomQuote())
+    dispatch(fetchRandomQuoteByAuthor('Jesse Pinkman'))
   }, [dispatch])
   console.log(state)
 

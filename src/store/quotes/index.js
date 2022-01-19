@@ -13,6 +13,9 @@ import fetchQuotesByAuthor from './quotesByAuthor/fetchQuotesByAuthor.action'
 import randomQuote from './randomQuote/randomQuote.reducer'
 import fetchRandomQuote from './randomQuote/fetchRandomQuote.action'
 
+import randomQuoteByAuthor from './randomQuoteByAuthor/randomQuoteByAuthor.reducer'
+import fetchRandomQuoteByAuthor from './randomQuoteByAuthor/fetchRandomQuoteByAuthor.action'
+
 export {
   allQuotesList,
   fetchAllQuotesList,
@@ -24,4 +27,6 @@ export {
   fetchQuotesByAuthor,
   randomQuote,
   fetchRandomQuote,
+  randomQuoteByAuthor,
+  fetchRandomQuoteByAuthor,
 }

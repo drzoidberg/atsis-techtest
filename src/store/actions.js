@@ -14,6 +14,7 @@ import {
   fetchQuotesBySeries,
   fetchQuotesByAuthor,
   fetchRandomQuote,
+  fetchRandomQuoteByAuthor,
 } from './quotes'
 
 export {
@@ -30,4 +31,5 @@ export {
   fetchQuotesBySeries,
   fetchQuotesByAuthor,
   fetchRandomQuote,
+  fetchRandomQuoteByAuthor,
 }

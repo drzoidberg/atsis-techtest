@@ -4,7 +4,7 @@ import { allCharactersList, characterById, charactersByName, charactersByCategor
 
 import { allEpisodesList, episodeById, episodeBySeries } from './episodes'
 
-import { allQuotesList, quoteById, quotesBySeries, quotesByAuthor, randomQuote } from './quotes'
+import { allQuotesList, quoteById, quotesBySeries, quotesByAuthor, randomQuote, randomQuoteByAuthor } from './quotes'
 
 export default combineReducers({
   allCharactersList,
@@ -20,4 +20,5 @@ export default combineReducers({
   quotesBySeries,
   quotesByAuthor,
   randomQuote,
+  randomQuoteByAuthor,
 })
