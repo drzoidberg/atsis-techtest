@@ -7,6 +7,7 @@ import {
   fetchCharactersByName,
   fetchCharactersByCategory,
   fetchRandomCharacter,
+  fetchAllEpisodes,
 } from './store/actions'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     dispatch(fetchCharactersByName({ limit: 1, offset: 1, characterName: 'Walter' }))
     dispatch(fetchCharactersByCategory({ limit: 3, offset: 1, category: 'Better Call Saul' }))
     dispatch(fetchRandomCharacter())
+    dispatch(fetchAllEpisodes())
   }, [dispatch])
   console.log(state)
 

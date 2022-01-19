@@ -15,8 +15,8 @@ import fetchRandomCharacter from './randomCharacter/fetchRandomCharacter.action'
 
 export {
   allCharactersList,
-  characterById,
   fetchAllCharacters,
+  characterById,
   fetchCharacterById,
   charactersByName,
   fetchCharactersByName,
