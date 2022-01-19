@@ -6,7 +6,7 @@ import {
   fetchRandomCharacter,
 } from './characters'
 
-import { fetchAllEpisodes } from './episodes'
+import { fetchAllEpisodes, fetchEpisodeById, fetchEpisodeBySeries } from './episodes'
 
 export {
   fetchAllCharacters,
@@ -15,4 +15,6 @@ export {
   fetchCharactersByCategory,
   fetchRandomCharacter,
   fetchAllEpisodes,
+  fetchEpisodeById,
+  fetchEpisodeBySeries,
 }
