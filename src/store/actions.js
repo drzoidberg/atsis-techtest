@@ -8,7 +8,7 @@ import {
 
 import { fetchAllEpisodes, fetchEpisodeById, fetchEpisodeBySeries } from './episodes'
 
-import { fetchAllQuotesList, fetchQuoteById } from './quotes'
+import { fetchAllQuotesList, fetchQuoteById, fetchQuotesBySeries } from './quotes'
 
 export {
   fetchAllCharacters,
@@ -21,4 +21,5 @@ export {
   fetchEpisodeBySeries,
   fetchAllQuotesList,
   fetchQuoteById,
+  fetchQuotesBySeries,
 }

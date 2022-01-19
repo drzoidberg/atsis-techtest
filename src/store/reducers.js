@@ -4,7 +4,7 @@ import { allCharactersList, characterById, charactersByName, charactersByCategor
 
 import { allEpisodesList, episodeById, episodeBySeries } from './episodes'
 
-import { allQuotesList, quoteById } from './quotes'
+import { allQuotesList, quoteById, quotesBySeries } from './quotes'
 
 export default combineReducers({
   allCharactersList,
@@ -17,4 +17,5 @@ export default combineReducers({
   episodeBySeries,
   allQuotesList,
   quoteById,
+  quotesBySeries,
 })

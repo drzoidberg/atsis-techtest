@@ -2,26 +2,27 @@ import breakingBadApi from '../../../apis/breakingBad.api'
 import constants from '../../constants'
 
 const { fulfilled, rejected } = constants.status
-const { FETCH_ALL_QUOTES } = constants.type.quotes
+const { FETCH_QUOTES_BY_SERIES } = constants.type.quotes
 
 /**
- * the API as of now doesn't offer pagination
+ * it can be (for now) either 'Breaking Bad' or 'Better Call Saul'
+ * it doesn't allow pagination as of now
  */
-export default function fetchAllQuotesList() {
+export default function fetchQuotesBySeries(seriesStr) {
   return async function (dispatch) {
     try {
-      const response = await breakingBadApi.get(`/quotes`)
+      const response = await breakingBadApi.get(`/quotes?series=${seriesStr}`)
       dispatch({
-        type: FETCH_ALL_QUOTES,
+        type: FETCH_QUOTES_BY_SERIES,
         payload: {
           status: fulfilled,
           data: response.data,
-          paramsPassed: 'none',
+          paramsPassed: { seriesStr },
         },
       })
     } catch (error) {
       dispatch({
-        type: FETCH_ALL_QUOTES,
+        type: FETCH_QUOTES_BY_SERIES,
         payload: {
           status: rejected,
           error: `There was an error. Please try again later (API returned: "${error.message}")`,
