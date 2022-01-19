@@ -10,6 +10,7 @@ import {
   fetchAllEpisodes,
   fetchEpisodeById,
   fetchEpisodeBySeries,
+  fetchAllQuotesList,
 } from './store/actions'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
     dispatch(fetchAllEpisodes())
     dispatch(fetchEpisodeById(1))
     dispatch(fetchEpisodeBySeries('Better Call Saul'))
+    dispatch(fetchAllQuotesList())
   }, [dispatch])
   console.log(state)
 
