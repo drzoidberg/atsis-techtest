@@ -7,4 +7,16 @@ import fetchDeathByName from './deathByName/fetchDeathByName.action'
 import totalCountSeries from './totalCountSeries/totalCountSeries.reducer'
 import fetchTotalCountSeries from './totalCountSeries/fetchTotalCountSeries.action'
 
-export { allDeathsList, fetchAllDeathsList, deathByName, fetchDeathByName, totalCountSeries, fetchTotalCountSeries }
+import deathCountByName from './deathCountByName/deathCountByName.reducer'
+import fetchDeathCountByName from './deathCountByName/fetchDeathCountByName.action'
+
+export {
+  allDeathsList,
+  fetchAllDeathsList,
+  deathByName,
+  fetchDeathByName,
+  totalCountSeries,
+  fetchTotalCountSeries,
+  deathCountByName,
+  fetchDeathCountByName,
+}

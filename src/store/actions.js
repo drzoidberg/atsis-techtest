@@ -17,7 +17,7 @@ import {
   fetchRandomQuoteByAuthor,
 } from './quotes'
 
-import { fetchAllDeathsList, fetchDeathByName, fetchTotalCountSeries } from './deaths'
+import { fetchAllDeathsList, fetchDeathByName, fetchTotalCountSeries, fetchDeathCountByName } from './deaths'
 
 export {
   fetchAllCharacters,
@@ -37,4 +37,5 @@ export {
   fetchAllDeathsList,
   fetchDeathByName,
   fetchTotalCountSeries,
+  fetchDeathCountByName,
 }
