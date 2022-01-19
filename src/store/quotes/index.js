@@ -1,4 +1,7 @@
 import allQuotesList from './allQuotesList/allQuotesList.reducer'
 import fetchAllQuotesList from './allQuotesList/fetchAllQuotesList.action'
 
-export { allQuotesList, fetchAllQuotesList }
+import quoteById from './quoteById/quoteById.reducer'
+import fetchQuoteById from './quoteById/fetchQuoteById.action'
+
+export { allQuotesList, fetchAllQuotesList, quoteById, fetchQuoteById }
