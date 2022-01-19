@@ -4,16 +4,25 @@ import constants from '../../constants'
 const { fulfilled, rejected } = constants.status
 const { FETCH_CHARACTERS_BY_NAME } = constants.type.characters
 
-export default function fetchCharactersByName(characterName) {
+/**
+ * set limit & offset to 'none' in order to disable pagination and fetch ALL characters
+ */
+export default function fetchCharactersByName({ limit, offset, characterName }) {
   return async function (dispatch) {
     try {
-      const response = await breakingBadApi.get(`/characters/?name=${characterName}`)
+      let endpointStr = ''
+      if (limit !== 'none' && offset !== 'none') {
+        endpointStr = `?limit=${limit}&offset=${offset}&name=${characterName}`
+      } else {
+        endpointStr = `?name=${characterName}`
+      }
+      const response = await breakingBadApi.get(`/characters${endpointStr}`)
       dispatch({
         type: FETCH_CHARACTERS_BY_NAME,
         payload: {
           status: fulfilled,
           data: response.data,
-          paramsPassed: { characterName },
+          paramsPassed: { limit, offset, characterName },
         },
       })
     } catch (error) {

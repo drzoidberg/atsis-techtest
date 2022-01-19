@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     dispatch(fetchAllCharacters({ limit: 'none', offset: 'none' }))
     dispatch(fetchCharacterById(1))
-    dispatch(fetchCharactersByName('Walter'))
+    dispatch(fetchCharactersByName({ limit: 1, offset: 1, characterName: 'Walter' }))
     dispatch(fetchCharactersByCategory('Better Call Saul'))
     dispatch(fetchRandomCharacter())
   }, [dispatch])
