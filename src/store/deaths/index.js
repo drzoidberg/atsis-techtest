@@ -10,6 +10,9 @@ import fetchTotalCountSeries from './totalCountSeries/fetchTotalCountSeries.acti
 import deathCountByName from './deathCountByName/deathCountByName.reducer'
 import fetchDeathCountByName from './deathCountByName/fetchDeathCountByName.action'
 
+import randomDeath from './randomDeath/randomDeath.reducer'
+import fetchRandomDeath from './randomDeath/fetchRandomDeath.action'
+
 export {
   allDeathsList,
   fetchAllDeathsList,
@@ -19,4 +22,6 @@ export {
   fetchTotalCountSeries,
   deathCountByName,
   fetchDeathCountByName,
+  randomDeath,
+  fetchRandomDeath,
 }

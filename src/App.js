@@ -20,6 +20,7 @@ import {
   fetchDeathByName,
   fetchTotalCountSeries,
   fetchDeathCountByName,
+  fetchRandomDeath,
 } from './store/actions'
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
     dispatch(fetchDeathByName('Walter White'))
     dispatch(fetchTotalCountSeries())
     dispatch(fetchDeathCountByName('Jesse Pinkman'))
+    dispatch(fetchRandomDeath())
   }, [dispatch])
   console.log(state)
 
