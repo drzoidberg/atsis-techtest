@@ -7,4 +7,16 @@ import fetchQuoteById from './quoteById/fetchQuoteById.action'
 import quotesBySeries from './quotesBySeries/quotesBySeries.reducer'
 import fetchQuotesBySeries from './quotesBySeries/fetchQuotesBySeries.action'
 
-export { allQuotesList, fetchAllQuotesList, quoteById, fetchQuoteById, quotesBySeries, fetchQuotesBySeries }
+import quotesByAuthor from './quotesByAuthor/quotesByAuthor.reducer'
+import fetchQuotesByAuthor from './quotesByAuthor/fetchQuotesByAuthor.action'
+
+export {
+  allQuotesList,
+  fetchAllQuotesList,
+  quoteById,
+  fetchQuoteById,
+  quotesBySeries,
+  fetchQuotesBySeries,
+  quotesByAuthor,
+  fetchQuotesByAuthor,
+}

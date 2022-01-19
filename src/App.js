@@ -13,6 +13,7 @@ import {
   fetchAllQuotesList,
   fetchQuoteById,
   fetchQuotesBySeries,
+  fetchQuotesByAuthor,
 } from './store/actions'
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
     dispatch(fetchAllQuotesList())
     dispatch(fetchQuoteById(1))
     dispatch(fetchQuotesBySeries('Better Call Saul'))
+    dispatch(fetchQuotesByAuthor('Jesse Pinkman'))
   }, [dispatch])
   console.log(state)
 
