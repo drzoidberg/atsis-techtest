@@ -10,6 +10,9 @@ import fetchQuotesBySeries from './quotesBySeries/fetchQuotesBySeries.action'
 import quotesByAuthor from './quotesByAuthor/quotesByAuthor.reducer'
 import fetchQuotesByAuthor from './quotesByAuthor/fetchQuotesByAuthor.action'
 
+import randomQuote from './randomQuote/randomQuote.reducer'
+import fetchRandomQuote from './randomQuote/fetchRandomQuote.action'
+
 export {
   allQuotesList,
   fetchAllQuotesList,
@@ -19,4 +22,6 @@ export {
   fetchQuotesBySeries,
   quotesByAuthor,
   fetchQuotesByAuthor,
+  randomQuote,
+  fetchRandomQuote,
 }

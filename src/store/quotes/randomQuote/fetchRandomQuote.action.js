@@ -2,14 +2,14 @@ import breakingBadApi from '../../../apis/breakingBad.api'
 import constants from '../../constants'
 
 const { fulfilled, rejected } = constants.status
-const { FETCH_RANDOM_CHARACTER } = constants.type.characters
+const { FETCH_RANDOM_QUOTE } = constants.type.quotes
 
-export default function fetchRandomCharacter() {
+export default function fetchRandomQuote() {
   return async function (dispatch) {
     try {
-      const response = await breakingBadApi.get(`/character/random`)
+      const response = await breakingBadApi.get(`/quote/random`)
       dispatch({
-        type: FETCH_RANDOM_CHARACTER,
+        type: FETCH_RANDOM_QUOTE,
         payload: {
           status: fulfilled,
           data: response.data,
@@ -18,7 +18,7 @@ export default function fetchRandomCharacter() {
       })
     } catch (error) {
       dispatch({
-        type: FETCH_RANDOM_CHARACTER,
+        type: FETCH_RANDOM_QUOTE,
         payload: {
           status: rejected,
           error: `There was an error. Please try again later (API returned: "${error.message}")`,

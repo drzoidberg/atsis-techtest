@@ -7,7 +7,7 @@ const { FETCH_QUOTES_BY_AUTHOR } = constants.type.quotes
 export default function fetchQuoteByAuthor(authorStr) {
   return async function (dispatch) {
     try {
-      const response = await breakingBadApi.get(`/quotes?author=${authorStr}`)
+      const response = await breakingBadApi.get(`/quote?author=${authorStr}`)
       dispatch({
         type: FETCH_QUOTES_BY_AUTHOR,
         payload: {
