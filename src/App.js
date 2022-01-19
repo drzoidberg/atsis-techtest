@@ -16,6 +16,9 @@ import {
   fetchQuotesByAuthor,
   fetchRandomQuote,
   fetchRandomQuoteByAuthor,
+  fetchAllDeathsList,
+  fetchDeathByName,
+  fetchTotalCountSeries,
 } from './store/actions'
 
 function App() {
@@ -39,6 +42,9 @@ function App() {
     dispatch(fetchQuotesByAuthor('Jesse Pinkman'))
     dispatch(fetchRandomQuote())
     dispatch(fetchRandomQuoteByAuthor('Jesse Pinkman'))
+    dispatch(fetchAllDeathsList())
+    dispatch(fetchDeathByName('Walter White'))
+    dispatch(fetchTotalCountSeries())
   }, [dispatch])
   console.log(state)
 

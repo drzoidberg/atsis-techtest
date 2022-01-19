@@ -6,6 +6,8 @@ import { allEpisodesList, episodeById, episodeBySeries } from './episodes'
 
 import { allQuotesList, quoteById, quotesBySeries, quotesByAuthor, randomQuote, randomQuoteByAuthor } from './quotes'
 
+import { allDeathsList, deathByName, totalCountSeries } from './deaths'
+
 export default combineReducers({
   allCharactersList,
   characterById,
@@ -21,4 +23,7 @@ export default combineReducers({
   quotesByAuthor,
   randomQuote,
   randomQuoteByAuthor,
+  allDeathsList,
+  deathByName,
+  totalCountSeries,
 })
