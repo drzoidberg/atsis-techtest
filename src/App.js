@@ -16,7 +16,7 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(fetchAllCharacters())
+    dispatch(fetchAllCharacters({ limit: 'none', offset: 'none' }))
     dispatch(fetchCharacterById(1))
     dispatch(fetchCharactersByName('Walter'))
     dispatch(fetchCharactersByCategory('Better Call Saul'))

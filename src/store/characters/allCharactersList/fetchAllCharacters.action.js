@@ -4,16 +4,23 @@ import constants from '../../constants'
 const { fulfilled, rejected } = constants.status
 const { FETCH_ALL_CHARACTERS } = constants.type.characters
 
-export default function fetchAllCharacters() {
+/**
+ * set limit & offset to 'none' in order to disable pagination and fetch ALL characters
+ */
+export default function fetchAllCharacters({ limit, offset }) {
   return async function (dispatch) {
     try {
-      const response = await breakingBadApi.get(`/characters`)
+      let endpointStr = ''
+      if (limit !== 'none' || offset !== 'none') {
+        endpointStr = `?limit=${limit}&offset=${offset}`
+      }
+      const response = await breakingBadApi.get(`/characters${endpointStr}`)
       dispatch({
         type: FETCH_ALL_CHARACTERS,
         payload: {
           status: fulfilled,
           data: response.data,
-          paramsPassed: 'none',
+          paramsPassed: { limit, offset },
         },
       })
     } catch (error) {
