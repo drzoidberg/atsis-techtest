@@ -29,6 +29,18 @@
         "isExtra": false,
         "isScreen": false,
         "isFeature": true
+      },
+      {
+        "text": "Uses internationalization",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Uses React Bootstrap as component library, and Bootstrap styles",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
       }
     ]
   },
@@ -57,9 +69,20 @@
         "isScreen": false,
         "isFeature": true
       },
-      { "text": "Uses no component library", "isExtra": true, "isScreen": false, "isFeature": true },
       {
-        "text": "Uses a combination of sass + node modules to apply styles",
+        "text": "Uses internationalization",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Uses no component library. 100% custom styles",
+        "isExtra": true,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Uses a combination of sass + css modules to apply styles",
         "isExtra": true,
         "isScreen": false,
         "isFeature": true

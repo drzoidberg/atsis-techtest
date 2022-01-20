@@ -32,5 +32,8 @@ export default {
       FETCH_TOTAL_DEATH_COUNT_SERIES: 'FETCH_TOTAL_DEATH_COUNT_SERIES',
       FETCH_RANDOM_DEATH: 'FETCH_RANDOM_DEATH',
     },
+    appData: {
+      FETCH_APP_DATA: 'FETCH_APP_DATA',
+    },
   },
 }

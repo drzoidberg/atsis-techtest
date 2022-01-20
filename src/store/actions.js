@@ -25,6 +25,8 @@ import {
   fetchRandomDeath,
 } from './deaths'
 
+import { fetchAppData } from './appData'
+
 export {
   fetchAllCharacters,
   fetchCharacterById,
@@ -45,4 +47,5 @@ export {
   fetchTotalCountSeries,
   fetchDeathCountByName,
   fetchRandomDeath,
+  fetchAppData,
 }

@@ -1,0 +1,80 @@
+[
+  {
+    "title": "MVP: \"Minimum Viable Product\"",
+    "text": "Aplicación en la que se pueden consultar los detalles de los personajes de la serie Breaking Bad, utilizando la Breaking Bad API",
+    "buttonText": "Entrar a MVP",
+    "screensFeaturesList": [
+      { "text": "Listado de todos los personajes existentes", "isExtra": false, "isScreen": true, "isFeature": false },
+      { "text": "Detalle de personaje", "isExtra": false, "isScreen": true, "isFeature": false },
+      {
+        "text": "Utiliza redux y redux-thunk para gestionar el estado de la aplicación",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Utiliza axios para gestionar las peticiones http a la API de Breaking Bad",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Utiliza react-router para gestionar la comunicación entre rutas",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Utiliza React Bootstrap como librería de componentes, y estilos Bootstrap",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      }
+    ]
+  },
+  {
+    "title": "MVP + EXTRAS",
+    "text": "Aplicación en la que se pueden consultar los detalles de los personajes de la serie Breaking Bad, utilizando la Breaking Bad API, con algunos cambios y modificaciones",
+    "buttonText": "Entrar a MVP + EXTRAS",
+    "screensFeaturesList": [
+      { "text": "Listado de todos los personajes existentes", "isExtra": false, "isScreen": true, "isFeature": false },
+      { "text": "Detalle de personaje", "isExtra": false, "isScreen": true, "isFeature": false },
+      {
+        "text": "Utiliza redux y redux-thunk para gestionar el estado de la aplicación",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Utiliza axios para gestionar las peticiones http a la API de Breaking Bad",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Utiliza react-router para gestionar la comunicación entre rutas",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "No utiliza ninguna librería de componentes. Estilos 100% personalizados",
+        "isExtra": true,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Utiliza una combinación de sass + css modules para aplicar estilos",
+        "isExtra": true,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Utiliza react-spring para implementar animaciones",
+        "isExtra": true,
+        "isScreen": false,
+        "isFeature": true
+      }
+    ]
+  }
+]

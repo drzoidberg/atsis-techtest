@@ -8,6 +8,8 @@ import { allQuotesList, quoteById, quotesBySeries, quotesByAuthor, randomQuote, 
 
 import { allDeathsList, deathByName, totalCountSeries, deathCountByName, randomDeath } from './deaths'
 
+import { appData } from './appData'
+
 export default combineReducers({
   allCharactersList,
   characterById,
@@ -28,4 +30,5 @@ export default combineReducers({
   totalCountSeries,
   deathCountByName,
   randomDeath,
+  appData,
 })
