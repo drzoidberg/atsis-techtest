@@ -9,6 +9,8 @@ import reducers from './store/reducers'
 
 import App from './App'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 const composedEnhancer = compose(
   applyMiddleware(thunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
