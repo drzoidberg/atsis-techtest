@@ -5,15 +5,19 @@ import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Button from 'react-bootstrap/Button'
 import Badge from 'react-bootstrap/Badge'
-
 import uuidv4 from '../../lib/helpers/generateUuid'
+import * as i18n from './i18n'
+import useLocalStorage from '../../hooks/useLocalStorage'
 
-import uiTextsEn from './i18n/uiTexts.en.json'
-import uiTextsEs from './i18n/uiTexts.es.json'
-import dataCardsEn from './i18n/dataCards.en.json'
-import dataCardsEs from './i18n/dataCards.es.json'
+// import uiTextsEn from './i18n/uiTexts.en.json'
+// import uiTextsEs from './i18n/uiTexts.es.json'
+// import dataCardsEn from './i18n/dataCards.en.json'
+// import dataCardsEs from './i18n/dataCards.es.json'
 
 function Home() {
+  const [LSLang] = useLocalStorage('BBAppLang')
+
+  // i18n[`uiTexts${LSLang}`]
   return (
     <Container className='d-flex align-items-center min-vh-100'>
       <div>
@@ -24,7 +28,7 @@ function Home() {
           <p className='home-lead text-center'>Please choose the interface version you want to try:</p>
         </Row>
         <Row>
-          {dataCardsEn.map(dataCard => (
+          {i18n[`dataCards${LSLang}`].map(dataCard => (
             <Col key={uuidv4()} xs={12} sm={6} md={6} lg={6} xl={6} xxl={6} className='mb-3'>
               <Card className='h-100'>
                 <Card.Body>

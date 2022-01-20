@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAppData } from './store/actions'
@@ -7,37 +7,22 @@ import Home from './views/Home/Home'
 import SwitchLanguageMvp from './components/SwitchLanguageMvp/SwitchLanguageMvp'
 import uuidv4 from './lib/helpers/generateUuid'
 
-const LangContext = React.createContext()
-
-function LangProvider(props) {
-  const [LSLang, setLSLang] = useLocalStorage('BBAppLang')
-  const [langValue, setLangValue] = React.useState(LSLang)
-  const lang = [langValue, setLangValue]
-
-  useEffect(() => {
-    setLSLang('en')
-  }, [setLSLang])
-
-  return <LangContext.Provider value={lang} {...props} />
-}
-
 const routesList = [{ exact: true, path: '/', component: Home }]
 
 function App() {
   const dispatch = useDispatch()
-  const langStore = useSelector(store => store.appData.data.lang)
-  // const [, setBbApplicationLang] = useLocalStorage('bbApplicationLang', langStore)
+  const [LSLang, setLSLang] = useLocalStorage('BBAppLang')
 
   React.useEffect(() => {
     dispatch(fetchAppData())
   }, [dispatch])
 
-  // React.useEffect(() => {
-  //   setBbApplicationLang(langStore)
-  // }, [langStore])
+  React.useEffect(() => {
+    setLSLang('Es')
+  }, [LSLang])
 
   return (
-    <LangProvider>
+    <>
       <SwitchLanguageMvp />
       <BrowserRouter>
         <Switch>
@@ -48,7 +33,7 @@ function App() {
           ))}
         </Switch>
       </BrowserRouter>
-    </LangProvider>
+    </>
   )
 }
 
