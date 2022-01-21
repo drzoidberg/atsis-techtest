@@ -2,8 +2,8 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import * as i18n from './i18n'
-import useLocalStorage from '../../hooks/useLocalStorage'
-import { useLanguage } from '../../context/lang-context'
+import useLocalStorage from '../../../hooks/useLocalStorage'
+import { useLanguage } from '../../../context/lang-context'
 
 function SwitchLanguageMvp() {
   const [LSLang, setLSLang] = useLocalStorage('BBAppLang')
