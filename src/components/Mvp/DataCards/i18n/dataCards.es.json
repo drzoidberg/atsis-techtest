@@ -3,6 +3,7 @@
     "title": "MVP: \"Minimum Viable Product\"",
     "text": "Aplicación en la que se pueden consultar los detalles de los personajes de la serie Breaking Bad, utilizando la Breaking Bad API",
     "buttonText": "Entrar a MVP",
+    "to": "/mvp/characters-list",
     "screensFeaturesList": [
       { "text": "Listado de todos los personajes existentes", "isExtra": false, "isScreen": true, "isFeature": false },
       { "text": "Detalle de personaje", "isExtra": false, "isScreen": true, "isFeature": false },
@@ -42,6 +43,7 @@
     "title": "MVP + EXTRAS",
     "text": "Aplicación que también utiliza la API de Breaking Bad, pero con pantallas y funcionalidades ampliadas o modificadas",
     "buttonText": "Entrar a MVP + EXTRAS",
+    "to": "culo",
     "screensFeaturesList": [
       { "text": "Listado de todos los personajes existentes", "isExtra": false, "isScreen": true, "isFeature": false },
       { "text": "Detalle de personaje", "isExtra": false, "isScreen": true, "isFeature": false },

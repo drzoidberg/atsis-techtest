@@ -23,7 +23,7 @@ function App() {
         <SwitchLanguageMvp />
         <Switch>
           <Route key={uuidv4()} exact path={'/'} component={Home} />
-          <Route key={uuidv4()} exact path={'/characters-list'} component={CharactersList} />
+          <Route key={uuidv4()} exact path={'/mvp/characters-list'} component={CharactersList} />
           <Route key={uuidv4()} path={'*'} component={FourOhFour} />
           {/* {routesList.map(route => (
               <Route key={uuidv4()} exact={route.exact} path={route.path}>

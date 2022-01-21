@@ -19,7 +19,7 @@ function DataCards() {
             <Card.Title as='h5'>{dataCard.title}</Card.Title>
             <Card.Text>{dataCard.text}</Card.Text>
             <div className='d-grid gap-2'>
-              <Button as={Link} to='/characters-list' variant='primary' className='home-button mb-3'>
+              <Button as={Link} to={dataCard.to} variant='primary' className='home-button mb-3'>
                 {dataCard.buttonText}
               </Button>
             </div>
@@ -43,6 +43,9 @@ function DataCards() {
               ))}
             </ListGroup>
           </Card.Body>
+          <Card.Footer>
+            <small className='text-muted'>{i18n[`uiTexts${LSLang}`].futhermore}</small>
+          </Card.Footer>
         </Card>
       </Col>
     )

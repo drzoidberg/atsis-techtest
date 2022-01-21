@@ -1,3 +1,4 @@
 {
-  "homeConsists": "Consta de las siguientes pantallas 🖥️ y funcionalidades ⚛️:"
+  "homeConsists": "Consta de las siguientes pantallas 🖥️ y funcionalidades ⚛️:",
+  "futhermore": "Y además también: memoización de peticiones http, custom hooks, React Context…"
 }
