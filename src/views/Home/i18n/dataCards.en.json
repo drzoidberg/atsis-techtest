@@ -25,7 +25,7 @@
         "isFeature": true
       },
       {
-        "text": "Uses React Bootstrap as component library, and Bootstrap styles",
+        "text": "Uses React Bootstrap as component library",
         "isExtra": false,
         "isScreen": false,
         "isFeature": true
@@ -35,18 +35,12 @@
         "isExtra": false,
         "isScreen": false,
         "isFeature": true
-      },
-      {
-        "text": "Uses React Bootstrap as component library, and Bootstrap styles",
-        "isExtra": false,
-        "isScreen": false,
-        "isFeature": true
       }
     ]
   },
   {
     "title": "MVP + EXTRAS",
-    "text": "Application where character details of the Breaking Bad series can be consulted, using the Breaking Bad API, plus some additions",
+    "text": "Application that also uses the Breaking Bad API, but with extended or modified screens and functionalities.",
     "buttonText": "Enter MVP + EXTRAS",
     "screensFeaturesList": [
       { "text": "List of all existing characters", "isExtra": false, "isScreen": true, "isFeature": false },

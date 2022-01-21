@@ -11,21 +11,20 @@ import useLocalStorage from '../../hooks/useLocalStorage'
 
 // import uiTextsEn from './i18n/uiTexts.en.json'
 // import uiTextsEs from './i18n/uiTexts.es.json'
-// import dataCardsEn from './i18n/dataCards.en.json'
+import dataCardsEn from './i18n/dataCards.en.json'
 // import dataCardsEs from './i18n/dataCards.es.json'
 
 function Home() {
   const [LSLang] = useLocalStorage('BBAppLang')
 
-  // i18n[`uiTexts${LSLang}`]
   return (
     <Container className='d-flex align-items-center min-vh-100'>
       <div>
         <Row className='mt-5 mt-3'>
-          <h1 className='home-title text-center'>Fiddling with Breaking Bad</h1>
+          <h1 className='home-title text-center'>{i18n[`uiTexts${LSLang}`].homeTitle}</h1>
         </Row>
         <Row>
-          <p className='home-lead text-center'>Please choose the interface version you want to try:</p>
+          <p className='home-lead text-center'>{i18n[`uiTexts${LSLang}`].homeLead}</p>
         </Row>
         <Row>
           {i18n[`dataCards${LSLang}`].map(dataCard => (
@@ -41,7 +40,7 @@ function Home() {
                   </div>
                   <Card.Text className='mt-3'>
                     <small className='home-consists d-flex justify-content-center'>
-                      It consists of the following screens 🖥️ and features ⚛️:
+                      {i18n[`uiTexts${LSLang}`].homeConsists}
                     </small>
                   </Card.Text>
                   <ListGroup variant='flush'>
@@ -65,7 +64,7 @@ function Home() {
         </Row>
         <Row className='my-4'>
           <small className='text-center '>
-            Made with 👓 by{' '}
+            {i18n[`uiTexts${LSLang}`].homeMadeBy}{' '}
             <a href='http://https://www.linkedin.com/in/jorge-vicens-valor-6ab93721/'>Jorge Vicens Valor</a>
           </small>
         </Row>

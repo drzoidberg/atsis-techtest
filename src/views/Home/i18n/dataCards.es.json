@@ -13,7 +13,7 @@
         "isFeature": true
       },
       {
-        "text": "Utiliza axios para gestionar las peticiones http a la API de Breaking Bad",
+        "text": "Utiliza axios para gestionar las peticiones http a la Breaking Bad API",
         "isExtra": false,
         "isScreen": false,
         "isFeature": true
@@ -25,7 +25,13 @@
         "isFeature": true
       },
       {
-        "text": "Utiliza React Bootstrap como librería de componentes, y estilos Bootstrap",
+        "text": "Utiliza React Bootstrap como librería de componentes",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Usa internacionalización",
         "isExtra": false,
         "isScreen": false,
         "isFeature": true
@@ -34,7 +40,7 @@
   },
   {
     "title": "MVP + EXTRAS",
-    "text": "Aplicación en la que se pueden consultar los detalles de los personajes de la serie Breaking Bad, utilizando la Breaking Bad API, con algunos cambios y modificaciones",
+    "text": "Aplicación que también utiliza la API de Breaking Bad, pero con pantallas y funcionalidades ampliadas o modificadas",
     "buttonText": "Entrar a MVP + EXTRAS",
     "screensFeaturesList": [
       { "text": "Listado de todos los personajes existentes", "isExtra": false, "isScreen": true, "isFeature": false },
@@ -58,13 +64,19 @@
         "isFeature": true
       },
       {
-        "text": "No utiliza ninguna librería de componentes. Estilos 100% personalizados",
+        "text": "Usa internacionalización",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Sin librería de componentes. Estilos 100% personalizados",
         "isExtra": true,
         "isScreen": false,
         "isFeature": true
       },
       {
-        "text": "Utiliza una combinación de sass + css modules para aplicar estilos",
+        "text": "Utiliza sass + css modules para aplicar estilos",
         "isExtra": true,
         "isScreen": false,
         "isFeature": true
