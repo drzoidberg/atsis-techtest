@@ -4,7 +4,7 @@ import React from 'react'
 export default function useLocalStorageState(
   key,
   { serialize = JSON.stringify, deserialize = JSON.parse } = {},
-  defaultValue = '',
+  defaultValue = 'En',
 ) {
   const [state, setState] = React.useState(() => {
     const valueInLocalStorage = window.localStorage.getItem(key)
