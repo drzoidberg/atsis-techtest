@@ -1,3 +1,4 @@
+import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -7,16 +8,12 @@ import Button from 'react-bootstrap/Button'
 import Badge from 'react-bootstrap/Badge'
 import uuidv4 from '../../lib/helpers/generateUuid'
 import * as i18n from './i18n'
-import useLocalStorage from '../../hooks/useLocalStorage'
-
-// import uiTextsEn from './i18n/uiTexts.en.json'
-// import uiTextsEs from './i18n/uiTexts.es.json'
-import dataCardsEn from './i18n/dataCards.en.json'
-// import dataCardsEs from './i18n/dataCards.es.json'
+import { useLanguage } from '../../context/lang-context'
 
 function Home() {
-  const [LSLang] = useLocalStorage('BBAppLang')
+  const [LSLang] = useLanguage()
 
+  console.log(LSLang)
   return (
     <Container className='d-flex align-items-center min-vh-100'>
       <div>
