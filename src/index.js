@@ -5,9 +5,7 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
 import { BrowserRouter } from 'react-router-dom'
 import reducers from './store/reducers'
-
 import App from './App'
-
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const composedEnhancer = compose(

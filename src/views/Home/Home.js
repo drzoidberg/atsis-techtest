@@ -13,7 +13,6 @@ import { useLanguage } from '../../context/lang-context'
 function Home() {
   const [LSLang] = useLanguage()
 
-  console.log(LSLang)
   return (
     <Container className='d-flex align-items-center min-vh-100'>
       <div>

@@ -1,9 +1,9 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { Switch, Route } from 'react-router-dom'
 import useLocalStorage from './hooks/useLocalStorage'
 import Home from './views/Home/Home'
 import SwitchLanguageMvp from './components/SwitchLanguageMvp/SwitchLanguageMvp'
+import FourOhFour from './views/Mvp/FourOhFour/FourOhFour'
 import uuidv4 from './lib/helpers/generateUuid'
 import { LanguageProvider } from './context/lang-context'
 
@@ -16,21 +16,19 @@ function App() {
     setLSLang('Es')
   }, [LSLang, setLSLang])
 
-  // return 'nothing to see'
   return (
     <>
       <LanguageProvider>
         <SwitchLanguageMvp />
-        <BrowserRouter>
-          <Switch>
-            <Route key={uuidv4()} exact path={'/'} component={Home} />
-            {/* {routesList.map(route => (
+        <Switch>
+          <Route key={uuidv4()} exact path={'/'} component={Home} />
+          <Route key={uuidv4()} exact path={'*'} component={FourOhFour} />
+          {/* {routesList.map(route => (
               <Route key={uuidv4()} exact={route.exact} path={route.path}>
                 {route.component()}
               </Route>
             ))} */}
-          </Switch>
-        </BrowserRouter>
+        </Switch>
       </LanguageProvider>
     </>
   )
