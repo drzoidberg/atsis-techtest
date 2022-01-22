@@ -3,6 +3,7 @@
     "title": "MVP: Minimum Viable Product",
     "text": "Application where character details of the Breaking Bad series can be consulted, using the Breaking Bad API",
     "buttonText": "Enter MVP",
+    "to": "/mvp/characters-list",
     "screensFeaturesList": [
       { "text": "List of all existing characters", "isExtra": false, "isScreen": true, "isFeature": false },
       { "text": "Character detail", "isExtra": false, "isScreen": true, "isFeature": false },

@@ -18,7 +18,7 @@ function App() {
   }, [LSLang, setLSLang])
 
   return (
-    <>
+    <div>
       <LanguageProvider>
         <SwitchLanguageMvp />
         <Switch>
@@ -32,7 +32,7 @@ function App() {
             ))} */}
         </Switch>
       </LanguageProvider>
-    </>
+    </div>
   )
 }
 

@@ -9,9 +9,9 @@ function Home() {
   const [LSLang] = useLanguage()
 
   return (
-    <Container className='d-flex align-items-center min-vh-100 justify-content-center'>
-      <div>
-        <Row className='mt-5 mt-3'>
+    <Container className='d-flex min-vh-100 justify-content-center'>
+      <div className='mt-4'>
+        <Row className='mt-5 mb-3'>
           <h1 className='home-title text-center'>{i18n[`uiTexts${LSLang}`].homeTitle}</h1>
         </Row>
         <Row>

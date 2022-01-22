@@ -1,4 +1,4 @@
-import { useLocation, Link } from 'react-router-dom'
+import { useLocation, useHistory, Link } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -8,6 +8,7 @@ import { useLanguage } from '../../../context/lang-context'
 
 function FourOhFour() {
   let location = useLocation()
+  let history = useHistory()
   const [LSLang] = useLanguage()
 
   return (
@@ -16,7 +17,7 @@ function FourOhFour() {
         <Col>
           <h3 className='page-not-found text-center'>
             <strong>Error:</strong> {i18n[`uiTexts${LSLang}`].pageNotFound} (<code>{location.pathname}</code>)
-            <Button as={Link} to='/' className='ms-3'>
+            <Button onClick={history.goBack} className='ms-3'>
               Go Back
             </Button>
           </h3>
