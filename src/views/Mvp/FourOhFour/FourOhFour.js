@@ -18,7 +18,7 @@ function FourOhFour() {
           <h3 className='page-not-found text-center'>
             <strong>Error:</strong> {i18n[`uiTexts${LSLang}`].pageNotFound} (<code>{location.pathname}</code>)
             <Button onClick={history.goBack} className='ms-3'>
-              Go Back
+              {i18n[`uiTexts${LSLang}`].goBack}
             </Button>
           </h3>
         </Col>
