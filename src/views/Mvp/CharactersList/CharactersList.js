@@ -1,9 +1,7 @@
 import React from 'react'
-import { useHistory, Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-import Button from 'react-bootstrap/Button'
-
 import GenericButton from '../../../components/Mvp/GenericButton/GenericButton'
 import CharacterCard from '../../../components/Mvp/CharacterCard/CharacterCard'
 import * as i18n from './i18n'

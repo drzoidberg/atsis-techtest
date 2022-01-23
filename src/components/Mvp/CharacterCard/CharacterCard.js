@@ -26,7 +26,10 @@ function CharacterCard({ character }) {
           alt={`Picture of ${character.img}`}
         />
         <Card.Body className='d-flex flex-column'>
-          <Card.Title>{character.name}</Card.Title>
+          <Card.Title>{`${character.name}`}</Card.Title>
+          <Card.Subtitle>
+            <em>{`"${character.nickname}"`}</em>
+          </Card.Subtitle>
           <Card.Text className='text-muted'>{occupationsStr}</Card.Text>
           <Button variant='primary' as={Link} to={`/mvp/character-detail/${character.char_id}`} className='mt-auto '>
             {i18n[`uiTexts${LSLang}`].characterDetail}
