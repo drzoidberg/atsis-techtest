@@ -61,64 +61,105 @@ function CharacterDetail() {
         ) : !isLoaded ? (
           <p>loading content...</p>
         ) : (
-          <Row>
-            <Col xs={12} sm={12} md={12} lg={3} xl={3} xxl={3}>
-              <Image fluid rounded src={characterData.img} alt={`Picture of ${characterData.img}`} />
-            </Col>
-            <Col xs={12} sm={12} md={12} lg={9} xl={9} xxl={9}>
-              <Card>
-                <Card.Body>
-                  <Row>
-                    <Col xs={5} sm={5} md={5} lg={3} xl={3} xxl={3} className='d-flex justify-content-end'>
-                      <span className='text-muted'>Name:</span>
-                    </Col>
-                    <Col xs={7} sm={7} md={7} lg={3} xl={3} xxl={3} className='p-0'>
-                      {characterData.name}
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs={5} sm={5} md={5} lg={3} xl={3} xxl={3} className='d-flex justify-content-end'>
-                      <span className='text-muted'>Nickname:</span>
-                    </Col>
-                    <Col xs={7} sm={7} md={7} lg={3} xl={3} xxl={3} className='p-0'>
-                      {characterData.nickname}
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs={5} sm={5} md={5} lg={3} xl={3} xxl={3} className='d-flex justify-content-end'>
-                      <span className='text-muted'>Birthday:</span>
-                    </Col>
-                    <Col xs={7} sm={7} md={7} lg={3} xl={3} xxl={3} className='p-0'>
-                      {characterData.birthday}
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs={5} sm={5} md={5} lg={3} xl={3} xxl={3} className='d-flex justify-content-end'>
-                      <span className='text-muted'>
-                        {characterData.occupation.length > 1 ? 'Occupations:' : 'Occupation:'}
-                      </span>
-                    </Col>
-                    <Col xs={7} sm={7} md={7} lg={3} xl={3} xxl={3} className='p-0'>
-                      {characterData.occupation.length > 1
-                        ? characterData.occupation.map((occupation, index) => (
-                            <span>
-                              {occupation}
-                              {index === characterData.occupation.length - 1 ? '' : ', '}{' '}
-                            </span>
-                          ))
-                        : characterData.occupation}
-                    </Col>
-                  </Row>
-                  <hr className='mx-5' />
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam numquam dicta praesentium est animi
-                  autem tempore reprehenderit facilis excepturi provident porro aspernatur molestiae, incidunt culpa
-                  sunt facere, suscipit, corrupti omnis. Recusandae facere, beatae quibusdam voluptas quos alias amet
-                  quisquam. Laboriosam dolorem, maiores quis expedita esse impedit deserunt doloribus tempora culpa enim
-                  magnam voluptatum modi. Tempore maiores ipsam magni. Sunt perspiciatis obcaecati delectus dolore
-                  possimus. Maxime repudiandae, voluptates laboriosam debitis quidem ad magnam inventore vel in eum
-                  ducimus molestiae expedita quos maiores architecto similique est? Atque magni quia tenetur temporibus
-                  voluptates odio voluptas deserunt aspernatur fugit id explicabo sapiente, incidunt quod.
-                  {/* <Button
+          // <Row className='d-flex'>
+          <>
+            <Row>
+              <Col
+                xs={{ span: 12, order: 0, offset: 0 }}
+                sm={{ span: 12, order: 0, offset: 0 }}
+                md={{ span: 12, order: 0, offset: 0 }}
+                lg={{ span: 4, order: 2, offset: 2 }}
+                xl={{ span: 4, order: 2, offset: 2 }}
+                xxl={{ span: 4, order: 2, offset: 2 }}
+                className='mb-3'
+              >
+                <Image
+                  className='d-flex'
+                  fluid
+                  rounded
+                  src={characterData.img}
+                  alt={`Picture of ${characterData.img}`}
+                />
+              </Col>
+              <Col
+                xs={{ span: 12, order: 0, offset: 0 }}
+                sm={{ span: 12, order: 0, offset: 0 }}
+                md={{ span: 12, order: 0, offset: 0 }}
+                lg={{ span: 6, order: 1, offset: 0 }}
+                xl={{ span: 6, order: 1, offset: 0 }}
+                xxl={{ span: 6, order: 1, offset: 0 }}
+              >
+                <Card className='order-1'>
+                  <Card.Body>
+                    <Row>
+                      <Col xs={6} sm={6} md={6} lg={5} xl={5} xxl={5} className='d-flex justify-content-end text-end'>
+                        <span className='text-muted'>Name:</span>
+                      </Col>
+                      <Col className='ps-0 pe-4'>{characterData.name}</Col>
+                    </Row>
+                    <Row>
+                      <Col xs={6} sm={6} md={6} lg={5} xl={5} xxl={5} className='d-flex justify-content-end text-end'>
+                        <span className='text-muted'>Nickname:</span>
+                      </Col>
+                      <Col className='ps-0 pe-4'>{characterData.nickname}</Col>
+                    </Row>
+                    <Row>
+                      <Col xs={6} sm={6} md={6} lg={5} xl={5} xxl={5} className='d-flex justify-content-end text-end'>
+                        <span className='text-muted'>Birthday:</span>
+                      </Col>
+                      <Col className='ps-0 pe-4'>{characterData.birthday}</Col>
+                    </Row>
+                    <Row>
+                      <Col xs={6} sm={6} md={6} lg={5} xl={5} xxl={5} className='d-flex justify-content-end text-end'>
+                        <span className='text-muted'>
+                          {characterData.occupation.length > 1 ? 'Occupations:' : 'Occupation:'}
+                        </span>
+                      </Col>
+                      <Col className='ps-0 pe-4'>
+                        {characterData.occupation.length > 1
+                          ? characterData.occupation.map((occupation, index) => (
+                              <span>
+                                {occupation}
+                                {index === characterData.occupation.length - 1 ? '' : ', '}{' '}
+                              </span>
+                            ))
+                          : characterData.occupation}
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col xs={6} sm={6} md={6} lg={5} xl={5} xxl={5} className='d-flex justify-content-end text-end'>
+                        <span className='text-muted'>Portrayed by:</span>
+                      </Col>
+                      <Col className='ps-0 pe-4'>{characterData.portrayed}</Col>
+                    </Row>
+                    <Row>
+                      <Col xs={6} sm={6} md={6} lg={5} xl={5} xxl={5} className='d-flex justify-content-end text-end'>
+                        <span className='text-muted'>Status:</span>
+                      </Col>
+                      <Col className='ps-0 pe-4'>{characterData.status}</Col>
+                    </Row>
+                    <Row>
+                      <Col xs={6} sm={6} md={6} lg={5} xl={5} xxl={5} className='d-flex justify-content-end text-end'>
+                        <span className='text-muted'>Appears in:</span>
+                      </Col>
+                      <Col className='ps-0 pe-4'>{characterData.category}</Col>
+                    </Row>
+                    <Row>
+                      <Col xs={6} sm={6} md={6} lg={5} xl={5} xxl={5} className='d-flex justify-content-end text-end'>
+                        <span className='text-muted'>Appears in Seasons:</span>
+                      </Col>
+                      <Col className='ps-0 pe-4'>
+                        {characterData.appearance.length > 1
+                          ? characterData.appearance.map((appearance, index) => (
+                              <span>
+                                {appearance}
+                                {index === characterData.appearance.length - 1 ? '' : ', '}{' '}
+                              </span>
+                            ))
+                          : characterData.appearance}
+                      </Col>
+                    </Row>
+                    {/* <Button
                     variant='primary'
                     as={Link}
                     to={`/mvp/character-detail/${character.char_id}`}
@@ -126,10 +167,22 @@ function CharacterDetail() {
                   >
                     {i18n[`uiTexts${LSLang}`].characterDetail}
                   </Button> */}
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+            <Row>
+              <Col fluid xs={12} sm={12} md={12} lg={8} xl={8} xxl={8}>
+                <Card style={{ border: 'none' }}>
+                  <Card.Body>
+                    <h1 className='text-muted'>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, voluptate.
+                    </h1>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+          </>
         )}
       </div>
     </Container>
