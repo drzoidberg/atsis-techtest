@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
-import Button from 'react-bootstrap/Button'
 import Badge from 'react-bootstrap/Badge'
+import GenericButton from '../GenericButton/GenericButton'
 import uuidv4 from '../../../lib/helpers/generateUuid'
 import { useLanguage } from '../../../context/lang-context'
 import * as i18n from './i18n'
@@ -19,9 +19,13 @@ function DataCards() {
             <Card.Title as='h5'>{dataCard.title}</Card.Title>
             <Card.Text>{dataCard.text}</Card.Text>
             <div className='d-grid gap-2'>
-              <Button as={Link} to={dataCard.to} variant='primary' className='home-button mb-3'>
-                {dataCard.buttonText}
-              </Button>
+              <GenericButton
+                as={Link}
+                to={dataCard.to}
+                variant='primary'
+                className='home-button mb-3'
+                contents={dataCard.buttonText}
+              />
             </div>
             <Card.Text className='mt-3'>
               <small className='home-consists d-flex justify-content-center'>
