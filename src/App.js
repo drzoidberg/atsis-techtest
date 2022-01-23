@@ -7,6 +7,7 @@ import Home from './views/Home/Home'
 import SwitchLanguageMvp from './components/Mvp/SwitchLanguageMvp/SwitchLanguageMvp'
 import FourOhFour from './views/Mvp/FourOhFour/FourOhFour'
 import CharactersList from './views/Mvp/CharactersList/CharactersList'
+import CharacterDetail from './views/Mvp/CharacterDetail/CharacterDetail'
 
 // const routesList = [{ exact: true, path: '/', component: Home }] WHY?: conflicts with React.Context
 
@@ -24,6 +25,7 @@ function App() {
         <Switch>
           <Route key={uuidv4()} exact path={'/'} component={Home} />
           <Route key={uuidv4()} exact path={'/mvp/characters-list'} component={CharactersList} />
+          <Route key={uuidv4()} exact path={'/mvp/character-detail/:id'} component={CharacterDetail} />
           <Route key={uuidv4()} path={'*'} component={FourOhFour} />
           {/* {routesList.map(route => (
               <Route key={uuidv4()} exact={route.exact} path={route.path}>
