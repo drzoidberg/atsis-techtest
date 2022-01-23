@@ -19,18 +19,20 @@ function CharacterCard({ character }) {
   return (
     <Col key={uuidv4()} xs={12} sm={6} md={6} lg={3} xl={3} xxl={3} className='mb-3'>
       <Card className='h-100'>
-        <Card.Img
-          variant='top'
-          className={classes['character-card-img']}
-          src={character.img}
-          alt={`Picture of ${character.img}`}
-        />
+        <Link to={`/mvp/character-detail/${character.char_id}`}>
+          <Card.Img
+            variant='top'
+            className={classes['character-card-img']}
+            src={character.img}
+            alt={`Picture of ${character.img}`}
+          />
+        </Link>
         <Card.Body className='d-flex flex-column'>
           <Card.Title>{`${character.name}`}</Card.Title>
           <Card.Subtitle>
             <em>{`"${character.nickname}"`}</em>
           </Card.Subtitle>
-          <Card.Text className='text-muted'>{occupationsStr}</Card.Text>
+          <Card.Text className='text-muted mt-3'>{occupationsStr}</Card.Text>
           <Button variant='primary' as={Link} to={`/mvp/character-detail/${character.char_id}`} className='mt-auto '>
             {i18n[`uiTexts${LSLang}`].characterDetail}
           </Button>
