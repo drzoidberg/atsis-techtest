@@ -15,8 +15,10 @@ import constants from '../../../store/constants'
 import * as i18n from './i18n'
 import { useLanguage } from '../../../context/lang-context'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchCharacterById } from '../../../store/actions'
+import { fetchCharacterById, fetchRandomQuoteByAuthor } from '../../../store/actions'
 import uuidv4 from '../../../lib/helpers/generateUuid'
+
+import classes from './CharacterDetail.module.scss'
 
 function CharacterDetail() {
   const [LSLang] = useLanguage()
@@ -25,26 +27,51 @@ function CharacterDetail() {
   const dispatch = useDispatch()
 
   const characterReducerData = useSelector(state => state.characterById)
-  const [error, setError] = React.useState(false)
-  const [isLoaded, setIsLoaded] = React.useState(false)
+  const [characterError, setCharacterError] = React.useState(false)
+  const [isCharacterLoaded, setIsCharacterLoaded] = React.useState(false)
   const [characterData, setCharacterData] = React.useState({})
+
+  const randomQuoteByAuthorReducerData = useSelector(state => state.randomQuoteByAuthor)
+  const [randomQuoteError, setRandomQuoteError] = React.useState(false)
+  const [isQuoteLoaded, setIsQuoteLoaded] = React.useState(false)
+  const [randomQuoteData, setRandomQuoteData] = React.useState({})
 
   React.useEffect(() => {
     dispatch(fetchCharacterById(id))
+    dispatch(fetchRandomQuoteByAuthor())
   }, [dispatch, id])
 
   React.useEffect(() => {
     if (characterReducerData.status === 'rejected') {
-      setError(true)
+      setCharacterError(true)
     } else if (characterReducerData.status === 'pending') {
-      setIsLoaded(false)
+      setIsCharacterLoaded(false)
     } else if (characterReducerData.status === 'fulfilled') {
       setCharacterData(characterReducerData.data[0])
-      setIsLoaded(true)
-    }
-  }, [characterReducerData])
+      setIsCharacterLoaded(true)
 
-  console.log(characterData)
+      const characterName = characterData.name
+      dispatch(fetchRandomQuoteByAuthor(characterName))
+    }
+
+    if (randomQuoteByAuthorReducerData.status === 'rejected') {
+      setRandomQuoteError(true)
+    } else if (randomQuoteData.status === 'pending') {
+      setIsQuoteLoaded(false)
+    } else if (randomQuoteData.status === 'fulfilled') {
+      setRandomQuoteData(randomQuoteData.data[0])
+      setIsQuoteLoaded(true)
+    }
+  }, [
+    characterData.name,
+    characterReducerData.data,
+    characterReducerData.status,
+    dispatch,
+    randomQuoteByAuthorReducerData.status,
+    randomQuoteData,
+  ])
+
+  console.log({ randomQuoteByAuthorReducerData })
 
   return (
     <Container className='d-flex min-vh-100'>
@@ -55,40 +82,17 @@ function CharacterDetail() {
             <GenericButton onClick={history.goBack} variant='primary' contents={i18n[`uiTexts${LSLang}`].goBack} />
           </div>
         </Row>
-        {/* {error ? <h1>error</h1> : !isLoaded ? <h1>loading...</h1> : <h1>fulfilled</h1>} */}
-        {error ? (
+        {characterError ? (
           <p className='home-title text-center'>ERROR!</p>
-        ) : !isLoaded ? (
+        ) : !isCharacterLoaded ? (
           <p>loading content...</p>
         ) : (
-          // <Row className='d-flex'>
           <>
             <Row>
-              <Col
-                xs={{ span: 12, order: 0, offset: 0 }}
-                sm={{ span: 12, order: 0, offset: 0 }}
-                md={{ span: 12, order: 0, offset: 0 }}
-                lg={{ span: 4, order: 2, offset: 2 }}
-                xl={{ span: 4, order: 2, offset: 2 }}
-                xxl={{ span: 4, order: 2, offset: 2 }}
-                className='mb-3'
-              >
-                <Image
-                  className='d-flex'
-                  fluid
-                  rounded
-                  src={characterData.img}
-                  alt={`Picture of ${characterData.img}`}
-                />
+              <Col xs={12} sm={12} md={12} lg={4} xl={4} xxl={4} className='mb-3 float-start'>
+                <Image fluid rounded src={characterData.img} alt={`Picture of ${characterData.img}`} />
               </Col>
-              <Col
-                xs={{ span: 12, order: 0, offset: 0 }}
-                sm={{ span: 12, order: 0, offset: 0 }}
-                md={{ span: 12, order: 0, offset: 0 }}
-                lg={{ span: 6, order: 1, offset: 0 }}
-                xl={{ span: 6, order: 1, offset: 0 }}
-                xxl={{ span: 6, order: 1, offset: 0 }}
-              >
+              <Col xs={12} sm={12} md={12} lg={8} xl={8} xxl={8}>
                 <Card className='order-1'>
                   <Card.Body>
                     <Row>
@@ -118,7 +122,7 @@ function CharacterDetail() {
                       <Col className='ps-0 pe-4'>
                         {characterData.occupation.length > 1
                           ? characterData.occupation.map((occupation, index) => (
-                              <span>
+                              <span key={uuidv4()}>
                                 {occupation}
                                 {index === characterData.occupation.length - 1 ? '' : ', '}{' '}
                               </span>
@@ -151,7 +155,7 @@ function CharacterDetail() {
                       <Col className='ps-0 pe-4'>
                         {characterData.appearance.length > 1
                           ? characterData.appearance.map((appearance, index) => (
-                              <span>
+                              <span key={uuidv4()}>
                                 {appearance}
                                 {index === characterData.appearance.length - 1 ? '' : ', '}{' '}
                               </span>
@@ -159,25 +163,21 @@ function CharacterDetail() {
                           : characterData.appearance}
                       </Col>
                     </Row>
-                    {/* <Button
-                    variant='primary'
-                    as={Link}
-                    to={`/mvp/character-detail/${character.char_id}`}
-                    className='mt-auto '
-                  >
-                    {i18n[`uiTexts${LSLang}`].characterDetail}
-                  </Button> */}
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
-            <Row>
-              <Col fluid xs={12} sm={12} md={12} lg={8} xl={8} xxl={8}>
-                <Card style={{ border: 'none' }}>
-                  <Card.Body>
-                    <h1 className='text-muted'>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, voluptate.
-                    </h1>
+                    <hr className='m-4' />
+                    <Row className='pt-0 px-5 ms-4 mt-3'>
+                      <Card.Body>
+                        <p className={classes['pepino']}>
+                          {randomQuoteError ? 'ERROR!' : !isQuoteLoaded ? 'loading content..' : randomQuoteData}
+                        </p>
+                      </Card.Body>
+                      <Button
+                        variant='primary'
+                        className='mt-auto'
+                        onClick={id => fetchRandomQuoteByAuthor('Walter White')}
+                      >
+                        Fetch new quote
+                      </Button>
+                    </Row>
                   </Card.Body>
                 </Card>
               </Col>
