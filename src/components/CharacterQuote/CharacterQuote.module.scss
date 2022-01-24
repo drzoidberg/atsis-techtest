@@ -1,0 +1,16 @@
+.quote {
+  color: lightgrey !important;
+  font-size: 2rem !important;
+  font-style: italic !important;
+  line-height: 1.1 !important;
+  position: relative;
+}
+
+.quote::before {
+  content: '"';
+  position: absolute;
+  top: -3rem;
+  left: -2rem;
+  color: rgba(226, 226, 226, 0.39);
+  font-size: 9rem;
+}

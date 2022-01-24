@@ -1,0 +1,42 @@
+[
+  {
+    "title": "MVP: Minimum Viable Product",
+    "text": "Application where character details of the Breaking Bad series can be consulted, using the Breaking Bad API",
+    "buttonText": "Enter MVP",
+    "to": "/mvp/characters-list",
+    "screensFeaturesList": [
+      { "text": "List of all existing characters", "isExtra": false, "isScreen": true, "isFeature": false },
+      { "text": "Character detail", "isExtra": false, "isScreen": true, "isFeature": false },
+      {
+        "text": "Uses redux & redux-thunk to manage the application state",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Uses axios to manage http requests to the Breaking Bad API",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Uses react-router to manage communication between routes",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Uses React Bootstrap as component library",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      },
+      {
+        "text": "Uses internationalization without any library",
+        "isExtra": false,
+        "isScreen": false,
+        "isFeature": true
+      }
+    ]
+  }
+]

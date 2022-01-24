@@ -1,0 +1,12 @@
+{
+  "name": "Name",
+  "nickName": "Nickname",
+  "birthday": "Birthday",
+  "occupations": "Occupations",
+  "occupation": "Occupation",
+  "portrayed": "Portrayed by",
+  "status": "Status",
+  "appearance": "Appears in",
+  "appearanceSeasons": "Appears in Seasons",
+  "fetchNewQuote": "Fetch new quote"
+}
