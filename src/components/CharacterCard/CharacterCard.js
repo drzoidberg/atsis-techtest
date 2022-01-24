@@ -4,9 +4,9 @@ import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 // import Placeholder from 'react-bootstrap/Placeholder'
-import uuidv4 from '../../../lib/helpers/generateUuid'
+import uuidv4 from '../../lib/helpers/generateUuid'
 import * as i18n from './i18n'
-import { useLanguage } from '../../../context/lang-context'
+import { useLanguage } from '../../context/lang-context'
 
 import classes from './CharacterCard.module.scss'
 
@@ -15,7 +15,6 @@ function CharacterCard({ character }) {
 
   const occupationsStr = character.occupation.join(', ')
 
-  console.log({ character })
   return (
     <Col key={uuidv4()} xs={12} sm={6} md={6} lg={3} xl={3} xxl={3} className='mb-3'>
       <Card className='h-100'>

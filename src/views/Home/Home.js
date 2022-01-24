@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import * as i18n from './i18n'
 import { useLanguage } from '../../context/lang-context'
-import DataCards from '../../components/Mvp/DataCards/DataCards'
+import DataCards from '../../components/DataCards/DataCards'
 
 function Home() {
   const [LSLang] = useLanguage()

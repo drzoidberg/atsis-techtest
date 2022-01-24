@@ -1,20 +1,18 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchCharacterByIdAndRandomQuote, fetchRandomQuoteByAuthor } from '../../../store/actions'
-import { useLanguage } from '../../../context/lang-context'
+import { fetchCharacterByIdAndRandomQuote } from '../../store/actions'
+import { useLanguage } from '../../context/lang-context'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Image from 'react-bootstrap/Image'
-import GenericButton from '../../../components/Mvp/GenericButton/GenericButton'
-
-import constants from '../../../store/constants'
+import GenericButton from '../../components/GenericButton/GenericButton'
 
 import * as i18n from './i18n'
-import uuidv4 from '../../../lib/helpers/generateUuid'
+import uuidv4 from '../../lib/helpers/generateUuid'
 
 import classes from './CharacterDetail.module.scss'
 
@@ -50,6 +48,7 @@ function CharacterDetail() {
                   rounded
                   src={characterByIdAndRandomQuoteReducerSelector.data.img}
                   alt={`Picture of ${characterByIdAndRandomQuoteReducerSelector.data.img}`}
+                  style={{ objectFit: 'cover', height: '38rem' }}
                 />
               </Col>
               <Col xs={12} sm={12} md={12} lg={7} xl={7} xxl={7}>

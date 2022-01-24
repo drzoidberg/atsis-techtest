@@ -9,10 +9,11 @@ export default function fetchCharacterByIdAndRandomQuote(characterId) {
     try {
       const characterIdResponse = await breakingBadApi.get(`/characters/${characterId}`)
       const authorStr = characterIdResponse.data[0].name
-      const quoteResponse = await breakingBadApi.get(`/quote/random?author=${authorStr}`) //axios handles swapping '+' instead of ' ' for me
-      const { quote } = quoteResponse.data[0]
+      const quoteResponse = (await breakingBadApi.get(`/quote/random?author=${authorStr}`)) || '' //axios handles swapping '+' instead of ' ' for me
+      const { quote } = quoteResponse.data[0] || ''
       const response = characterIdResponse.data[0]
       response.quote = quote
+
       dispatch({
         type: FETCH_CHARACTER_BY_ID_AND_RANDOM_QUOTE,
         payload: {

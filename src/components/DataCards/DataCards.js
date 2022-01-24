@@ -4,8 +4,8 @@ import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Badge from 'react-bootstrap/Badge'
 import GenericButton from '../GenericButton/GenericButton'
-import uuidv4 from '../../../lib/helpers/generateUuid'
-import { useLanguage } from '../../../context/lang-context'
+import uuidv4 from '../../lib/helpers/generateUuid'
+import { useLanguage } from '../../context/lang-context'
 import * as i18n from './i18n'
 
 function DataCards() {

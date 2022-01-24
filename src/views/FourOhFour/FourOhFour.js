@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import * as i18n from './i18n'
-import { useLanguage } from '../../../context/lang-context'
+import { useLanguage } from '../../context/lang-context'
 
 function FourOhFour() {
   let location = useLocation()

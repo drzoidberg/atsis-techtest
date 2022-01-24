@@ -4,10 +4,10 @@ import useLocalStorage from './hooks/useLocalStorage'
 import uuidv4 from './lib/helpers/generateUuid'
 import { LanguageProvider } from './context/lang-context'
 import Home from './views/Home/Home'
-import SwitchLanguageMvp from './components/Mvp/SwitchLanguageMvp/SwitchLanguageMvp'
-import FourOhFour from './views/Mvp/FourOhFour/FourOhFour'
-import CharactersList from './views/Mvp/CharactersList/CharactersList'
-import CharacterDetail from './views/Mvp/CharacterDetail/CharacterDetail'
+import SwitchLanguageMvp from './components/SwitchLanguageMvp/SwitchLanguageMvp'
+import FourOhFour from './views/FourOhFour/FourOhFour'
+import CharactersList from './views/CharactersList/CharactersList'
+import CharacterDetail from './views/CharacterDetail/CharacterDetail'
 
 // const routesList = [{ exact: true, path: '/', component: Home }] WHY?: conflicts with React.Context
 

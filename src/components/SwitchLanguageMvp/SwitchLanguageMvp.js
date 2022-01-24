@@ -6,8 +6,8 @@ import Navbar from 'react-bootstrap/Navbar'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import * as i18n from './i18n'
-import useLocalStorage from '../../../hooks/useLocalStorage'
-import { useLanguage } from '../../../context/lang-context'
+import useLocalStorage from '../../hooks/useLocalStorage'
+import { useLanguage } from '../../context/lang-context'
 
 function SwitchLanguageMvp() {
   const [LSLang, setLSLang] = useLocalStorage('BBAppLang')

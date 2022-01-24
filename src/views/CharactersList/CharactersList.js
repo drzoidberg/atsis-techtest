@@ -2,13 +2,13 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-import GenericButton from '../../../components/Mvp/GenericButton/GenericButton'
-import CharacterCard from '../../../components/Mvp/CharacterCard/CharacterCard'
+import GenericButton from '../../components/GenericButton/GenericButton'
+import CharacterCard from '../../components/CharacterCard/CharacterCard'
 import * as i18n from './i18n'
-import { useLanguage } from '../../../context/lang-context'
+import { useLanguage } from '../../context/lang-context'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchAllCharacters } from '../../../store/actions'
-import uuidv4 from '../../../lib/helpers/generateUuid'
+import { fetchAllCharacters } from '../../store/actions'
+import uuidv4 from '../../lib/helpers/generateUuid'
 
 function CharactersList() {
   const [LSLang] = useLanguage()
@@ -20,7 +20,6 @@ function CharactersList() {
     dispatch(fetchAllCharacters({ limit: 'none', offset: 'none' }))
   }, [dispatch])
 
-  // console.log(allCharactersList)
   return (
     <Container className='pt-5'>
       <div className='mt-4'>
