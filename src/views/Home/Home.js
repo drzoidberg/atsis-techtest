@@ -17,7 +17,7 @@ function Home() {
         <Row>
           <p className='home-lead text-center'>{i18n[`uiTexts${LSLang}`].homeLead}</p>
         </Row>
-        <Row>
+        <Row className='d-flex justify-content-center'>
           <DataCards />
         </Row>
         <Row className='my-4'>

@@ -38,57 +38,5 @@
         "isFeature": true
       }
     ]
-  },
-  {
-    "title": "MVP + EXTRAS",
-    "text": "Aplicación que también utiliza la API de Breaking Bad, pero con pantallas y funcionalidades ampliadas o modificadas",
-    "buttonText": "Entrar a MVP + EXTRAS",
-    "to": "culo",
-    "screensFeaturesList": [
-      { "text": "Listado de todos los personajes existentes", "isExtra": false, "isScreen": true, "isFeature": false },
-      { "text": "Detalle de personaje", "isExtra": false, "isScreen": true, "isFeature": false },
-      {
-        "text": "Utiliza redux y redux-thunk para gestionar el estado de la aplicación",
-        "isExtra": false,
-        "isScreen": false,
-        "isFeature": true
-      },
-      {
-        "text": "Utiliza axios para gestionar las peticiones http a la API de Breaking Bad",
-        "isExtra": false,
-        "isScreen": false,
-        "isFeature": true
-      },
-      {
-        "text": "Utiliza react-router para gestionar la comunicación entre rutas",
-        "isExtra": false,
-        "isScreen": false,
-        "isFeature": true
-      },
-      {
-        "text": "Usa internacionalización sin ninguna librería",
-        "isExtra": false,
-        "isScreen": false,
-        "isFeature": true
-      },
-      {
-        "text": "Sin librería de componentes. Estilos 100% personalizados",
-        "isExtra": true,
-        "isScreen": false,
-        "isFeature": true
-      },
-      {
-        "text": "Utiliza sass + css modules para aplicar estilos",
-        "isExtra": true,
-        "isScreen": false,
-        "isFeature": true
-      },
-      {
-        "text": "Utiliza react-spring para implementar animaciones",
-        "isExtra": true,
-        "isScreen": false,
-        "isFeature": true
-      }
-    ]
   }
 ]
