@@ -1,6 +1,5 @@
 import React from 'react'
 
-// From Kent C. Dodds Epic React's course
 export default function useLocalStorageState(
   key,
   { serialize = JSON.stringify, deserialize = JSON.parse } = {},

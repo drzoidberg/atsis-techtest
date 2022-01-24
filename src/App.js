@@ -9,7 +9,7 @@ import FourOhFour from './views/FourOhFour/FourOhFour'
 import CharactersList from './views/CharactersList/CharactersList'
 import CharacterDetail from './views/CharacterDetail/CharacterDetail'
 
-// const routesList = [{ exact: true, path: '/', component: Home }] WHY?: conflicts with React.Context
+// const routesList = [{ exact: true, path: '/', component: Home }] WHY discarded?: conflicts with React.Context
 
 function App() {
   const [LSLang, setLSLang] = useLocalStorage(() => 'BBAppLang')
