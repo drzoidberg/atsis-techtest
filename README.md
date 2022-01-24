@@ -43,9 +43,9 @@ directory, that holds the mentioned components
 | 🧱 CharacterDetailCard          | It renders the card of a character in 🛕 CharacterDetail                 |
 | 🧱 CharacterDetailCardDataEntry | It renders the data entry of a character in 🛕 CharacterDetail           |
 | 🧱 CharacterQuote               | It renders the quote of a character in 🛕 CharacterDetail                |
-| 🧱 DataCards                    | Uses redux & redux-thunk to manage the application state                 |
-| 🧱 GenericButton                | Uses redux & redux-thunk to manage the application state                 |
-| 🧱 SwitchLanguage               | Uses redux & redux-thunk to manage the application state                 |
+| 🧱 DataCards                    | It renders the cata card of a character in 🛕 Home                       |
+| 🧱 GenericButton                | It renders a Button with default properties                              |
+| 🧱 SwitchLanguage               | I renders the application navbar, and is able to switch localizations    |
 
 ## ❓ Application Store rationale
 
@@ -63,6 +63,8 @@ Because I had a fair amount of time available when I was set out to implement i1
 - If some components have element lists that need translation, a similar logic will be followed: the user will decide
   the name of the list, and it will be followed by the localization. That is, for localize the DataCards component into
   Spanish, there will be a `dataCards.es.json`, and a `dataCards.en.json` for english.
+- The language is stored into LocalStorage (applied using a custom hook) once the application is loaded and every
+  component is able to access the value see the current language thanks to React Context.
 
 ## 🙇 An apology regarding git commits:
 
