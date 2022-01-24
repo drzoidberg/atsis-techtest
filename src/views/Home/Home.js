@@ -14,9 +14,9 @@ function Home() {
         <Row className='mt-5 mb-3'>
           <h1 className='home-title text-center mb-0'>{i18n[`uiTexts${LSLang}`].homeTitle}</h1>
         </Row>
-        <Row>
+        {/* <Row>
           <p className='home-lead text-center'>{i18n[`uiTexts${LSLang}`].homeLead}</p>
-        </Row>
+        </Row> */}
         <Row className='d-flex justify-content-center'>
           <DataCards />
         </Row>
