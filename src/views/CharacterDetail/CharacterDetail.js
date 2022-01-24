@@ -9,8 +9,8 @@ import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 import GenericButton from '../../components/GenericButton/GenericButton'
 import CharacterQuote from '../../components/CharacterQuote/CharacterQuote'
-import * as i18n from './i18n'
 import CharacterDetailCard from '../../components/CharacterDetailCard/CharacterDetailCard'
+import * as i18n from './i18n'
 
 function CharacterDetail() {
   const [LSLang] = useLanguage()
@@ -29,7 +29,7 @@ function CharacterDetail() {
       <div className='mt-4'>
         <Row className='mt-5 mb-3'>
           <div className='d-flex justify-content-between align-items-center'>
-            <h1 className='home-title text-center mb-0'>Character Details</h1>
+            <h1 className='home-title text-center mb-0'>{i18n[`uiTexts${LSLang}`].title}</h1>
             <GenericButton onClick={history.goBack} variant='primary' contents={i18n[`uiTexts${LSLang}`].goBack} />
           </div>
         </Row>

@@ -1,3 +1,12 @@
 {
-  "characterDetail": "Detalles de personaje"
+  "name": "Nombre",
+  "nickName": "Apodo",
+  "birthday": "Fecha de nacimiento",
+  "occupations": "Profesiones",
+  "occupation": "Profesión",
+  "portrayed": "Interpretado por",
+  "status": "Estatus",
+  "appearance": "Aparece en",
+  "appearanceSeasons": "Aparece en las temporadas",
+  "fetchNewQuote": "Ver nueva cita"
 }

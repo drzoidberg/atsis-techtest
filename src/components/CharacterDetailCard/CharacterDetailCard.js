@@ -4,18 +4,21 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
-import uuidv4 from '../../lib/generateUuid'
+import { useLanguage } from '../../context/lang-context'
 import { fetchCharacterByIdAndRandomQuote } from '../../store/actions'
+import * as i18n from './i18n'
+import uuidv4 from '../../lib/generateUuid'
 
 function CharacterDetailCard({ selector, id }) {
   const dispatch = useDispatch()
+  const [LSLang] = useLanguage()
 
   return (
     <Card className='order-1'>
       <Card.Body>
         <Row>
           <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-            <span className='text-muted'>Name:</span>
+            <span className='text-muted'>{i18n[`uiTexts${LSLang}`].name}:</span>
           </Col>
           <Col xs={6} sm={6} md={6} lg={8} xl={8} xxl={8} className='ps-0 pe-4'>
             <span>{selector.data.name}</span>
@@ -23,7 +26,7 @@ function CharacterDetailCard({ selector, id }) {
         </Row>
         <Row>
           <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-            <span className='text-muted'>Nickname:</span>
+            <span className='text-muted'>{i18n[`uiTexts${LSLang}`].nickName}:</span>
           </Col>
           <Col xs={6} sm={6} md={6} lg={8} xl={8} xxl={8} className='ps-0 pe-4'>
             <span>{selector.data.nickname}</span>
@@ -31,7 +34,7 @@ function CharacterDetailCard({ selector, id }) {
         </Row>
         <Row>
           <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-            <span className='text-muted'>Birthday:</span>
+            <span className='text-muted'>{i18n[`uiTexts${LSLang}`].birthday}:</span>
           </Col>
           <Col xs={6} sm={6} md={6} lg={8} xl={8} xxl={8} className='ps-0 pe-4'>
             <span>{selector.data.birthday}</span>
@@ -39,7 +42,12 @@ function CharacterDetailCard({ selector, id }) {
         </Row>
         <Row>
           <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-            <span className='text-muted'>{selector.data.occupation.length > 1 ? 'Occupations:' : 'Occupation:'}</span>
+            <span className='text-muted'>
+              {selector.data.occupation.length > 1
+                ? i18n[`uiTexts${LSLang}`].occupations
+                : i18n[`uiTexts${LSLang}`].occupation}
+              :
+            </span>
           </Col>
           <Col xs={6} sm={6} md={6} lg={7} xl={7} xxl={7} className='ps-0 pe-4'>
             {selector.data.occupation.length > 1
@@ -54,7 +62,7 @@ function CharacterDetailCard({ selector, id }) {
         </Row>
         <Row>
           <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-            <span className='text-muted'>Portrayed by:</span>
+            <span className='text-muted'>{i18n[`uiTexts${LSLang}`].portrayed}:</span>
           </Col>
           <Col xs={6} sm={6} md={6} lg={8} xl={8} xxl={8} className='ps-0 pe-4'>
             <span>{selector.data.portrayed}</span>
@@ -62,7 +70,7 @@ function CharacterDetailCard({ selector, id }) {
         </Row>
         <Row>
           <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-            <span className='text-muted'>Status:</span>
+            <span className='text-muted'>{i18n[`uiTexts${LSLang}`].status}:</span>
           </Col>
           <Col xs={6} sm={6} md={6} lg={8} xl={8} xxl={8} className='ps-0 pe-4'>
             <span>{selector.data.status}</span>
@@ -70,7 +78,7 @@ function CharacterDetailCard({ selector, id }) {
         </Row>
         <Row>
           <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-            <span className='text-muted'>Appears in:</span>
+            <span className='text-muted'>{i18n[`uiTexts${LSLang}`].appearance}:</span>
           </Col>
           <Col xs={6} sm={6} md={6} lg={8} xl={8} xxl={8} className='ps-0 pe-4'>
             <span>{selector.data.category}</span>
@@ -78,7 +86,7 @@ function CharacterDetailCard({ selector, id }) {
         </Row>
         <Row>
           <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-            <span className='text-muted'>Appears in Seasons:</span>
+            <span className='text-muted'>{i18n[`uiTexts${LSLang}`].appearanceSeasons}:</span>
           </Col>
           <Col xs={6} sm={6} md={6} lg={7} xl={7} xxl={7} className='ps-0 pe-4'>
             {selector.data.appearance.length > 1
@@ -94,7 +102,7 @@ function CharacterDetailCard({ selector, id }) {
         <hr className='m-3' />
         <Row className='mt-3 pt-0 px-4'>
           <Button variant='primary' className='mt-auto' onClick={() => dispatch(fetchCharacterByIdAndRandomQuote(id))}>
-            Fetch new quote
+            {i18n[`uiTexts${LSLang}`].fetchNewQuote}
           </Button>
         </Row>
       </Card.Body>
