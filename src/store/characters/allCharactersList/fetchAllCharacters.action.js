@@ -1,14 +1,19 @@
+import _ from 'lodash'
 import breakingBadApi from '../../../apis/breakingBad.api'
 import constants from '../../constants'
 
 const { fulfilled, rejected } = constants.status
 const { FETCH_ALL_CHARACTERS } = constants.type.characters
 
+export default function fetchAllCharacters({ limit, offset }) {
+  return _fetchAllCharacters({ limit, offset })
+}
+
 /**
  * set limit & offset to 'none' in order to disable pagination and fetch ALL characters
  */
-export default function fetchAllCharacters({ limit, offset }) {
-  return async function (dispatch) {
+function _fetchAllCharacters({ limit, offset }) {
+  return _.memoize(async function (dispatch) {
     try {
       let endpointStr = ''
       if (limit !== 'none' || offset !== 'none') {
@@ -32,5 +37,5 @@ export default function fetchAllCharacters({ limit, offset }) {
         },
       })
     }
-  }
+  })
 }

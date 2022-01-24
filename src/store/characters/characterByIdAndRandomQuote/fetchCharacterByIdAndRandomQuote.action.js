@@ -1,11 +1,15 @@
+import _ from 'lodash'
 import breakingBadApi from '../../../apis/breakingBad.api'
 import constants from '../../constants'
-
 const { fulfilled, rejected } = constants.status
 const { FETCH_CHARACTER_BY_ID_AND_RANDOM_QUOTE } = constants.type.characters
 
 export default function fetchCharacterByIdAndRandomQuote(characterId) {
-  return async function (dispatch) {
+  return _fetchCharacterByIdAndRandomQuote(characterId)
+}
+
+function _fetchCharacterByIdAndRandomQuote(characterId) {
+  return _.memoize(async function (dispatch) {
     try {
       const characterIdResponse = await breakingBadApi.get(`/characters/${characterId}`)
       const authorStr = characterIdResponse.data[0].name
@@ -31,5 +35,5 @@ export default function fetchCharacterByIdAndRandomQuote(characterId) {
         },
       })
     }
-  }
+  })
 }
