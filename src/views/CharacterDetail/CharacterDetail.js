@@ -6,13 +6,11 @@ import { useLanguage } from '../../context/lang-context'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
 import Image from 'react-bootstrap/Image'
 import GenericButton from '../../components/GenericButton/GenericButton'
+import CharacterQuote from '../../components/CharacterQuote/CharacterQuote'
 import * as i18n from './i18n'
-import uuidv4 from '../../lib/helpers/generateUuid'
-import classes from './CharacterDetail.module.scss'
+import CharacterDetailCard from '../../components/CharacterDetailCard/CharacterDetailCard'
 
 function CharacterDetail() {
   const [LSLang] = useLanguage()
@@ -50,115 +48,8 @@ function CharacterDetail() {
                 />
               </Col>
               <Col xs={12} sm={12} md={12} lg={7} xl={7} xxl={7}>
-                <Card className='order-1'>
-                  <Card.Body>
-                    <Row>
-                      <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-                        <span className='text-muted'>Name:</span>
-                      </Col>
-                      <Col xs={6} sm={6} md={6} lg={8} xl={8} xxl={8} className='ps-0 pe-4'>
-                        <span>{characterByIdAndRandomQuoteReducerSelector.data.name}</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-                        <span className='text-muted'>Nickname:</span>
-                      </Col>
-                      <Col xs={6} sm={6} md={6} lg={8} xl={8} xxl={8} className='ps-0 pe-4'>
-                        <span>{characterByIdAndRandomQuoteReducerSelector.data.nickname}</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-                        <span className='text-muted'>Birthday:</span>
-                      </Col>
-                      <Col xs={6} sm={6} md={6} lg={8} xl={8} xxl={8} className='ps-0 pe-4'>
-                        <span>{characterByIdAndRandomQuoteReducerSelector.data.birthday}</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-                        <span className='text-muted'>
-                          {characterByIdAndRandomQuoteReducerSelector.data.occupation.length > 1
-                            ? 'Occupations:'
-                            : 'Occupation:'}
-                        </span>
-                      </Col>
-                      <Col xs={6} sm={6} md={6} lg={7} xl={7} xxl={7} className='ps-0 pe-4'>
-                        {characterByIdAndRandomQuoteReducerSelector.data.occupation.length > 1
-                          ? characterByIdAndRandomQuoteReducerSelector.data.occupation.map((occupation, index) => (
-                              <span key={uuidv4()}>
-                                {occupation}
-                                {index === characterByIdAndRandomQuoteReducerSelector.data.occupation.length - 1
-                                  ? ''
-                                  : ', '}{' '}
-                              </span>
-                            ))
-                          : characterByIdAndRandomQuoteReducerSelector.data.occupation}
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-                        <span className='text-muted'>Portrayed by:</span>
-                      </Col>
-                      <Col xs={6} sm={6} md={6} lg={8} xl={8} xxl={8} className='ps-0 pe-4'>
-                        <span>{characterByIdAndRandomQuoteReducerSelector.data.portrayed}</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-                        <span className='text-muted'>Status:</span>
-                      </Col>
-                      <Col xs={6} sm={6} md={6} lg={8} xl={8} xxl={8} className='ps-0 pe-4'>
-                        <span>{characterByIdAndRandomQuoteReducerSelector.data.status}</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-                        <span className='text-muted'>Appears in:</span>
-                      </Col>
-                      <Col xs={6} sm={6} md={6} lg={8} xl={8} xxl={8} className='ps-0 pe-4'>
-                        <span>{characterByIdAndRandomQuoteReducerSelector.data.category}</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col xs={6} sm={6} md={6} lg={4} xl={4} xxl={4} className='d-flex justify-content-end text-end'>
-                        <span className='text-muted'>Appears in Seasons:</span>
-                      </Col>
-                      <Col xs={6} sm={6} md={6} lg={7} xl={7} xxl={7} className='ps-0 pe-4'>
-                        {characterByIdAndRandomQuoteReducerSelector.data.appearance.length > 1
-                          ? characterByIdAndRandomQuoteReducerSelector.data.appearance.map((appearance, index) => (
-                              <span key={uuidv4()}>
-                                {appearance}
-                                {index === characterByIdAndRandomQuoteReducerSelector.data.appearance.length - 1
-                                  ? ''
-                                  : ', '}{' '}
-                              </span>
-                            ))
-                          : characterByIdAndRandomQuoteReducerSelector.data.appearance}
-                      </Col>
-                    </Row>
-                    <hr className='m-3' />
-                    <Row className='mt-3 pt-0 px-4'>
-                      <Button
-                        variant='primary'
-                        className='mt-auto'
-                        onClick={() => dispatch(fetchCharacterByIdAndRandomQuote(id))}
-                      >
-                        Fetch new quote
-                      </Button>
-                    </Row>
-                  </Card.Body>
-                </Card>
-                <p className={`d-flex px-xs-4 px-sm-4 px-md-3 px-lg-3 px-xl-3 px-xxl-3 m-5`}>
-                  {characterByIdAndRandomQuoteReducerSelector.status === 'rejected' && 'ERROR!'}
-                  {characterByIdAndRandomQuoteReducerSelector.status === 'pending' && 'loading content…'}
-                  {characterByIdAndRandomQuoteReducerSelector.status === 'fulfilled' && (
-                    <span className={`${classes['quote']}`}>
-                      {characterByIdAndRandomQuoteReducerSelector.data?.quote || 'No quotes available'}
-                    </span>
-                  )}
-                </p>
+                <CharacterDetailCard id={id} selector={characterByIdAndRandomQuoteReducerSelector} />
+                <CharacterQuote selector={characterByIdAndRandomQuoteReducerSelector} />
               </Col>
             </Row>
           </>

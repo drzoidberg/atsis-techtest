@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import useLocalStorage from './hooks/useLocalStorage'
-import uuidv4 from './lib/helpers/generateUuid'
+import uuidv4 from './lib/generateUuid'
 import { LanguageProvider } from './context/lang-context'
 import Home from './views/Home/Home'
 import SwitchLanguage from './components/SwitchLanguage/SwitchLanguage'

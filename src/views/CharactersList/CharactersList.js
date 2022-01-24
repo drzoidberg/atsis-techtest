@@ -8,7 +8,7 @@ import { useLanguage } from '../../context/lang-context'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAllCharacters } from '../../store/actions'
 import * as i18n from './i18n'
-import uuidv4 from '../../lib/helpers/generateUuid'
+import uuidv4 from '../../lib/generateUuid'
 
 function CharactersList() {
   const [LSLang] = useLanguage()

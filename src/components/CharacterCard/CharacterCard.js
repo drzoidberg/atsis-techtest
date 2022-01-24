@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 // import Placeholder from 'react-bootstrap/Placeholder'
-import uuidv4 from '../../lib/helpers/generateUuid'
+import uuidv4 from '../../lib/generateUuid'
 import * as i18n from './i18n'
 import { useLanguage } from '../../context/lang-context'
 
