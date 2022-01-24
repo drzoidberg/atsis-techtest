@@ -3,13 +3,11 @@ import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import * as i18n from './i18n'
 import useLocalStorage from '../../hooks/useLocalStorage'
 import { useLanguage } from '../../context/lang-context'
 
-function SwitchLanguageMvp() {
+function SwitchLanguage() {
   const [LSLang, setLSLang] = useLocalStorage('BBAppLang')
   const [, setLang] = useLanguage()
 
@@ -45,4 +43,4 @@ function SwitchLanguageMvp() {
   )
 }
 
-export default SwitchLanguageMvp
+export default SwitchLanguage

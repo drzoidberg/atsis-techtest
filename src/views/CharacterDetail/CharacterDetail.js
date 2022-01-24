@@ -10,10 +10,8 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import Image from 'react-bootstrap/Image'
 import GenericButton from '../../components/GenericButton/GenericButton'
-
 import * as i18n from './i18n'
 import uuidv4 from '../../lib/helpers/generateUuid'
-
 import classes from './CharacterDetail.module.scss'
 
 function CharacterDetail() {

@@ -4,7 +4,7 @@ import useLocalStorage from './hooks/useLocalStorage'
 import uuidv4 from './lib/helpers/generateUuid'
 import { LanguageProvider } from './context/lang-context'
 import Home from './views/Home/Home'
-import SwitchLanguageMvp from './components/SwitchLanguageMvp/SwitchLanguageMvp'
+import SwitchLanguage from './components/SwitchLanguage/SwitchLanguage'
 import FourOhFour from './views/FourOhFour/FourOhFour'
 import CharactersList from './views/CharactersList/CharactersList'
 import CharacterDetail from './views/CharacterDetail/CharacterDetail'
@@ -21,7 +21,7 @@ function App() {
   return (
     <div>
       <LanguageProvider>
-        <SwitchLanguageMvp />
+        <SwitchLanguage />
         <Switch>
           <Route key={uuidv4()} exact path={'/'} component={Home} />
           <Route key={uuidv4()} exact path={'/mvp/characters-list'} component={CharactersList} />

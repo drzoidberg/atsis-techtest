@@ -4,10 +4,10 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import GenericButton from '../../components/GenericButton/GenericButton'
 import CharacterCard from '../../components/CharacterCard/CharacterCard'
-import * as i18n from './i18n'
 import { useLanguage } from '../../context/lang-context'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAllCharacters } from '../../store/actions'
+import * as i18n from './i18n'
 import uuidv4 from '../../lib/helpers/generateUuid'
 
 function CharactersList() {
