@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom'
 import reducers from './store/reducers'
 import App from './App'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.module.scss'
 
 const composedEnhancer = compose(
   applyMiddleware(thunk),

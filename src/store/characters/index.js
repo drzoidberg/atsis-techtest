@@ -4,6 +4,9 @@ import fetchAllCharacters from './allCharactersList/fetchAllCharacters.action'
 import characterById from './characterById/characterById.reducer'
 import fetchCharacterById from './characterById/fetchCharacterById.action'
 
+import characterByIdAndRandomQuote from './characterByIdAndRandomQuote/characterByIdAndRandomQuote.reducer'
+import fetchCharacterByIdAndRandomQuote from './characterByIdAndRandomQuote/fetchCharacterByIdAndRandomQuote.action'
+
 import charactersByName from './charactersByName/charactersByName.reducer'
 import fetchCharactersByName from './charactersByName/fetchCharactersByName.action'
 
@@ -18,6 +21,8 @@ export {
   fetchAllCharacters,
   characterById,
   fetchCharacterById,
+  characterByIdAndRandomQuote,
+  fetchCharacterByIdAndRandomQuote,
   charactersByName,
   fetchCharactersByName,
   charactersByCategory,

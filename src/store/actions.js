@@ -1,6 +1,7 @@
 import {
   fetchAllCharacters,
   fetchCharacterById,
+  fetchCharacterByIdAndRandomQuote,
   fetchCharactersByName,
   fetchCharactersByCategory,
   fetchRandomCharacter,
@@ -30,6 +31,7 @@ import {
 export {
   fetchAllCharacters,
   fetchCharacterById,
+  fetchCharacterByIdAndRandomQuote,
   fetchCharactersByName,
   fetchCharactersByCategory,
   fetchRandomCharacter,

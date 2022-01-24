@@ -1,6 +1,13 @@
 import { combineReducers } from 'redux'
 
-import { allCharactersList, characterById, charactersByName, charactersByCategory, randomCharacter } from './characters'
+import {
+  allCharactersList,
+  characterById,
+  characterByIdAndRandomQuote,
+  charactersByName,
+  charactersByCategory,
+  randomCharacter,
+} from './characters'
 
 import { allEpisodesList, episodeById, episodeBySeries } from './episodes'
 
@@ -13,6 +20,7 @@ import { allDeathsList, deathByName, totalCountSeries, deathCountByName, randomD
 export default combineReducers({
   allCharactersList,
   characterById,
+  characterByIdAndRandomQuote,
   charactersByName,
   charactersByCategory,
   randomCharacter,
