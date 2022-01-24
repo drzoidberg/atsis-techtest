@@ -63,8 +63,8 @@ Because I had a fair amount of time available when I was set out to implement i1
 - If some components have element lists that need translation, a similar logic will be followed: the user will decide
   the name of the list, and it will be followed by the localization. That is, for localize the DataCards component into
   Spanish, there will be a `dataCards.es.json`, and a `dataCards.en.json` for english.
-- The language is stored into LocalStorage (applied using a custom hook) once the application is loaded and every
-  component is able to access the value see the current language thanks to React Context.
+- The language is stored into <strong>LocalStorage</strong> (applied using a custom hook) once the application is loaded
+  and every component is able to access the value see the current language thanks to <strong>React Context</strong>.
 
 ## 🙇 An apology regarding git commits:
 
