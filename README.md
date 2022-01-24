@@ -15,6 +15,19 @@ suggested technical test
 | react-redux | the official needed bindings to use redux on React applications                                   |
 | redux-thunk | middleware used for perform async operations with redux                                           |
 
+## 🔎 What you will find
+
+| screen 🖥️ / feature ⚛️ | description                                                |
+| :--------------------- | :--------------------------------------------------------- |
+| 🖥️ screen              | List of all existing characters                            |
+| 🖥️ screen              | Character detail                                           |
+| ⚛️ feature             | Uses redux & redux-thunk to manage the application state   |
+| ⚛️ feature             | Uses axios to manage http requests to the Breaking Bad API |
+| ⚛️ feature             | Uses react-router to manage communication between routes   |
+| ⚛️ feature             | Uses React Bootstrap as component library                  |
+
+<span style="color: grey;">Also too: http request memoization, custom hooks, React Context...</span>
+
 ## 🛠 Installation & 🚀 Usage
 
 In order to properly run the package, you will need installed [v16.13.1](https://nodejs.org/) & npm on your machine
