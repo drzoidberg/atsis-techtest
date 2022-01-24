@@ -25,20 +25,10 @@ function CharacterDetail() {
   const dispatch = useDispatch()
 
   const characterByIdAndRandomQuoteReducerSelector = useSelector(state => state.characterByIdAndRandomQuote)
-  // const randomQuoteByAuthorReducerSelector = useSelector(state => state.randomQuoteByAuthor)
-
-  const [quote, setQuote] = React.useState()
 
   React.useEffect(() => {
     dispatch(fetchCharacterByIdAndRandomQuote(id))
   }, [dispatch, id])
-
-  function fetchNewQuote() {
-    dispatch(fetchCharacterByIdAndRandomQuote(id))
-    setQuote(characterByIdAndRandomQuoteReducerSelector.data.quote)
-  }
-
-  console.log({ characterByIdAndRandomQuoteReducerSelector })
 
   return (
     <Container className='pt-5'>
@@ -153,8 +143,11 @@ function CharacterDetail() {
                     </Row>
                     <hr className='m-3' />
                     <Row className='mt-3 pt-0 px-4'>
-                      {/* <Row className='mt-3 pt-0 px-xs-4 px-sm-4 px-md-5 px-lg-5 px-xl-5 px-xxl-5'> */}
-                      <Button variant='primary' className='mt-auto' onClick={() => fetchNewQuote()}>
+                      <Button
+                        variant='primary'
+                        className='mt-auto'
+                        onClick={() => dispatch(fetchCharacterByIdAndRandomQuote(id))}
+                      >
                         Fetch new quote
                       </Button>
                     </Row>
